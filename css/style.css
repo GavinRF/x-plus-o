@@ -1,0 +1,130 @@
+@font-face{
+  font-family: Now-Medium;
+  src: url(../font/Now-Medium.otf);
+}
+
+@font-face{
+  font-family: Now-Black;
+  src: url(../font/Now-Black.otf);
+}
+
+@font-face{
+  font-family: Now-Light;
+  src: url(../font/Now-Light.otf);
+}
+
+@font-face{
+  font-family: Delizioso;
+  src: url(../font/Delizioso.ttf);
+}
+
+html{
+  font-family: Now-Light !important;
+  scroll-behavior: smooth;
+}
+
+:root {
+--main-bg: #cdcdcd;
+--hotpink: #fe7cba;
+--pink: #fdc7df;
+--blue: #39b3fe;
+--green: #2bedba;
+--yellow: #ffdb00;
+--black: #171a1e;
+}
+
+a{
+  cursor: pointer;
+}
+
+a:hover{
+  color: var(--hotpink) !important;
+
+}
+
+h1{
+  font-family: Delizioso;
+  font-size: 6.5em !important;
+  color: var(--hotpink);
+}
+
+button{
+  line-height: normal !important;
+  padding: 12px 20px 8px 20px !important;
+}
+
+.main{
+  /* text-shadow: -4px -2px 6px #fdc7df; */
+  margin-top: -45px;
+}
+
+.area{
+  font-size: 4.25em !important;
+}
+
+h2{
+  font-family: Now-Medium;
+  color: #39b3fe;
+}
+
+body{
+  margin: 0px;
+  background: whitesmoke;
+}
+
+#canvas{
+  width:100vw;
+  height: 40vh;
+  cursor: grab;
+  background: white;
+/*   background: gray; */
+}
+
+#canvas:active{
+ cursor: grab; 
+}
+
+#cone{
+  position: relative;
+  width: 455px;
+  height: 445px;
+  margin: -460px 0 -100px auto;
+  cursor: grab;
+  background: transparent;
+}
+
+#cube{
+  position: absolute;
+  width: 655px;
+  height: 645px;
+  right:0px;
+  top: 1875px;
+  cursor: grab;
+  background: transparent;
+  z-index: -2;
+}
+
+.object-cover .object-center{
+  box-shadow: 0px 3px 3px rgba(30, 40, 53, 0.1), 0px 2px 2px rgba(6, 43, 92, 0.2), 0 2px 6px rgba(25, 101, 152, 0.4)!important;
+}
+
+.contact{
+  background-color: white;
+}
+
+.py-24{
+  padding-top: 4em !important;
+  padding-bottom: 16em !important;
+}
+
+footer{
+  background-color: var(--pink);
+}
+
+.baseline{
+  background-color: var(--hotpink) !important;
+}
+
+.txt-center{
+  text-align: center;
+}
