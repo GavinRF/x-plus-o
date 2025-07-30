@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memphis Style Randomizer</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        #myCanvas {
+            border: 2px solid #333;
+            background: white;
+            display: block;
+            margin: 20px auto;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: #FF432E;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #e63946;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="400"></canvas>
+    <button onclick="generateMemphis()">Generate New Memphis Design</button>
+
+    <script>
+        var myCanvas = document.getElementById("myCanvas");
+        var drawingContext = myCanvas.getContext("2d");
+        var colors = ["#00eb88", "#53BBF4", "#FF85CB", "#FF432E", "#ffe700"];
+
+        function generateMemphis() {
+            // Clear canvas
+            drawingContext.clearRect(0, 0, myCanvas.width, myCanvas.height);
+            
+            // Create array of all drawing functions
+            var drawingFunctions = [
+                function() {
+                    // Generate random lines (original)
+                    for (var i = 0; i < 8; i++) {
+                        var sizeMultiplier = Math.random() > 0.8 ? Math.random() * 2 + 1 : 1; // 20% chance for larger elements
+                        drawingContext.beginPath();
+                        drawingContext.strokeStyle = colors[i % colors.length];
+                        drawingContext.lineWidth = (Math.random() * 25 + 10) * sizeMultiplier;
+                        drawingContext.moveTo(Math.random() * 400, Math.random() * 400);
+                        drawingContext.lineTo(Math.random() * 400, Math.random() * 400);
+                        drawingContext.stroke();
+                    }
+                },
+                function() {
+                    // Generate half circles (some filled, some stroked)
+                    for (var i = 0; i < 6; i++) {
+                        var sizeMultiplier = Math.random() > 0.8 ? Math.random() * 2 + 1 : 1; // 20% chance for larger elements
+                        drawingContext.beginPath();
+                        var x = Math.random() * 400;
+                        var y = Math.random() * 400;
+                        var radius = (Math.random() * 40 + 10) * sizeMultiplier;
+                        var startAngle = Math.random() * Math.PI * 2;
+                        var endAngle = startAngle + Math.PI;
+                        var shouldFill = Math.random() > 0.5; // 50% chance to fill
+                        
+                        drawingContext.arc(x, y, radius, startAngle, endAngle);
+                        
+                        var color = colors[Math.floor(Math.random() * colors.length)];
+                        
+                        if (shouldFill) {
+                            drawingContext.fillStyle = color;
+                            drawingContext.fill();
+                        } else {
+                            drawingContext.strokeStyle = color;
+                            drawingContext.lineWidth = (Math.random() * 15 + 5) * sizeMultiplier;
+                            drawingContext.stroke();
+                        }
+                    }
+                },
+                function() {
+                    // Generate wavy lines
+                    for (var i = 0; i < 5; i++) {
+                        var sizeMultiplier = Math.random() > 0.8 ? Math.random() * 1.8 + 1 : 1; // 20% chance for larger elements
+                        drawingContext.save(); // Save current state
+                        
+                        var centerX = Math.random() * 400;
+                        var centerY = Math.random() * 400;
+                        var rotation = Math.random() * Math.PI * 2; // Random rotation
+                        
+                        // Move to center and rotate
+                        drawingContext.translate(centerX, centerY);
+                        drawingContext.rotate(rotation);
+                        
+                        drawingContext.beginPath();
+                        drawingContext.strokeStyle = colors[Math.floor(Math.random() * colors.length)];
+                        drawingContext.lineWidth = (Math.random() * 12 + 4) * sizeMultiplier;
+                        
+                        var length = (Math.random() * 150 + 50) * sizeMultiplier;
+                        var waves = Math.floor(Math.random() * 3) + 2; // Reduced max waves (2-4 instead of 2-5)
+                        var amplitude = (Math.random() * 15 + 8) * sizeMultiplier; // Slightly reduced amplitude
+                        var useSmooth = Math.random() > 0.5; // 50% chance for smooth curves
+                        
+                        // Draw from center of line outward
+                        var startX = -length / 2;
+                        var startY = 0;
+                        
+                        if (useSmooth) {
+                            // Smooth curves using quadratic curves
+                            drawingContext.moveTo(startX, startY);
+                            
+                            var points = waves * 4; // More points for smoother curves
+                            for (var j = 1; j <= points; j++) {
+                                var x = startX + (j / points) * length;
+                                var y = startY + Math.sin(j * Math.PI / 2) * amplitude;
+                                
+                                if (j === 1) {
+                                    drawingContext.lineTo(x, y);
+                                } else {
+                                    var prevX = startX + ((j-1) / points) * length;
+                                    var prevY = startY + Math.sin((j-1) * Math.PI / 2) * amplitude;
+                                    var controlX = (prevX + x) / 2;
+                                    var controlY = (prevY + y) / 2;
+                                    
+                                    drawingContext.quadraticCurveTo(controlX, controlY, x, y);
+                                }
+                            }
+                        } else {
+                            // Original zigzag style
+                            drawingContext.moveTo(startX, startY);
+                            
+                            for (var j = 0; j <= waves * 2; j++) {
+                                var x = startX + (j / (waves * 2)) * length;
+                                var y = startY + Math.sin(j * Math.PI / 2) * amplitude;
+                                drawingContext.lineTo(x, y);
+                            }
+                        }
+                        
+                        drawingContext.stroke();
+                        drawingContext.restore(); // Restore original state
+                    }
+                },
+                function() {
+                    // Generate some filled shapes for extra Memphis flair
+                    for (var i = 0; i < 3; i++) {
+                        var sizeMultiplier = Math.random() > 0.7 ? Math.random() * 2.5 + 1 : 1; // 30% chance for larger elements
+                        drawingContext.beginPath();
+                        var shapeType = Math.floor(Math.random() * 3);
+                        
+                        if (shapeType === 0) {
+                            // Triangle
+                            var x1 = Math.random() * 400;
+                            var y1 = Math.random() * 400;
+                            var size = 60 * sizeMultiplier;
+                            var x2 = x1 + (Math.random() - 0.5) * size;
+                            var y2 = y1 + (Math.random() - 0.5) * size;
+                            var x3 = x1 + (Math.random() - 0.5) * size;
+                            var y3 = y1 + (Math.random() - 0.5) * size;
+                            
+                            drawingContext.moveTo(x1, y1);
+                            drawingContext.lineTo(x2, y2);
+                            drawingContext.lineTo(x3, y3);
+                            drawingContext.closePath();
+                        } else if (shapeType === 1) {
+                            // Circle
+                            var x = Math.random() * 400;
+                            var y = Math.random() * 400;
+                            var radius = (Math.random() * 25 + 5) * sizeMultiplier;
+                            drawingContext.arc(x, y, radius, 0, Math.PI * 2);
+                        } else {
+                            // Rectangle
+                            var x = Math.random() * 400;
+                            var y = Math.random() * 400;
+                            var width = (Math.random() * 25 + 10) * sizeMultiplier; // Reduced from 40 + 10
+                            var height = (Math.random() * 25 + 10) * sizeMultiplier; // Reduced from 40 + 10
+                            drawingContext.rect(x, y, width, height);
+                        }
+                        
+                        drawingContext.fillStyle = colors[Math.floor(Math.random() * colors.length)];
+                        drawingContext.fill();
+                    }
+                },
+                function() {
+                    // Generate one checkerboard element (black squares only)
+                    drawingContext.save(); // Save current state
+                    
+                    var sizeMultiplier = Math.random() > 0.7 ? Math.random() * 2 + 1 : 1; // 30% chance for larger elements
+                    var centerX = Math.random() * 400;
+                    var centerY = Math.random() * 400;
+                    var rotation = Math.random() * Math.PI * 2; // Random rotation
+                    var checkSize = (Math.random() * 80 + 40) * sizeMultiplier; // Total size
+                    var squares = Math.floor(Math.random() * 6) + 3; // 3-8 squares wide
+                    var squareSize = checkSize / squares;
+                    
+                    // Move to center and rotate
+                    drawingContext.translate(centerX, centerY);
+                    drawingContext.rotate(rotation);
+                    
+                    drawingContext.fillStyle = "#000000";
+                    for (var row = 0; row < squares; row++) {
+                        for (var col = 0; col < squares; col++) {
+                            var isBlack = (row + col) % 2 === 0;
+                            if (isBlack) {
+                                drawingContext.fillRect(
+                                    -checkSize/2 + col * squareSize, 
+                                    -checkSize/2 + row * squareSize, 
+                                    squareSize, 
+                                    squareSize
+                                );
+                            }
+                        }
+                    }
+                    
+                    drawingContext.restore(); // Restore original state
+                },
+                function() {
+                    // Generate one polka dot element
+                    drawingContext.save(); // Save current state
+                    
+                    var sizeMultiplier = Math.random() > 0.7 ? Math.random() * 2 + 1 : 1; // 30% chance for larger elements
+                    var centerX = Math.random() * 400;
+                    var centerY = Math.random() * 400;
+                    var rotation = Math.random() * Math.PI * 2; // Random rotation
+                    var dotAreaWidth = (Math.random() * 150 + 100) * sizeMultiplier;
+                    var dotAreaHeight = (Math.random() * 150 + 100) * sizeMultiplier;
+                    var dotRadius = (Math.random() * 10 + 5) * sizeMultiplier;
+                    var spacing = dotRadius * (Math.random() * 4 + 4); // 4-8 times radius for more spacing
+                    
+                    // Move to center and rotate
+                    drawingContext.translate(centerX, centerY);
+                    drawingContext.rotate(rotation);
+                    
+                    // Black dots (no background needed)
+                    drawingContext.fillStyle = "#000000";
+                    for (var x = -dotAreaWidth/2 + spacing; x < dotAreaWidth/2 - dotRadius; x += spacing) {
+                        for (var y = -dotAreaHeight/2 + spacing; y < dotAreaHeight/2 - dotRadius; y += spacing) {
+                            drawingContext.beginPath();
+                            drawingContext.arc(x, y, dotRadius, 0, Math.PI * 2);
+                            drawingContext.fill();
+                        }
+                    }
+                    
+                    drawingContext.restore(); // Restore original state
+                }
+            ];
+            
+            // Shuffle the drawing functions array to randomize layering
+            for (var i = drawingFunctions.length - 1; i > 0; i--) {
+                var j = Math.floor(Math.random() * (i + 1));
+                var temp = drawingFunctions[i];
+                drawingFunctions[i] = drawingFunctions[j];
+                drawingFunctions[j] = temp;
+            }
+            
+            // Execute all drawing functions in random order
+            for (var i = 0; i < drawingFunctions.length; i++) {
+                drawingFunctions[i]();
+            }
+        }
+
+        // Generate initial design
+        generateMemphis();
+    </script>
+</body>
+</html>

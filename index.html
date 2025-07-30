@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>x+o | neon dream</title>
   <link rel="stylesheet" href="css/style.css">
+  <!-- <link rel="stylesheet" href="css/login.css"> -->
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://unpkg.com/zdog@1/dist/zdog.dist.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 <header class="text-gray-700 body-font">
@@ -18,12 +20,26 @@
       <span class="ml-3 text-xl">x+o</span>
     </a>
     <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-      <a class="mr-5">SHIRTS</a>
-      <a class="mr-5">SHORTS</a>
-      <a class="mr-5">SHOES</a>
-      <a class="mr-5">SALE</a>
+      <a href="#womens" class="mr-5">TOPS</a>
+      <a href="#dresses" class="mr-5">DRESSES</a>
+      <a href="#pants" class="mr-5">SHORTS</a>
+      <a href="#accessories" class="mr-5">ACCESSORIES</a>
+      <a href="#mens" class="mr-5">MENS</a>
+      <!-- <a class="mr-5">SALE</a> -->
 <!--       <a class="mr-5 hover:text-gray-900">Accessories</a> -->
     </nav>
+     <!-- Cart Button -->
+      <button id="cart-btn" class="relative inline-flex items-center bg-blue-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base">
+        CART
+        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span id="cart-count" class="cart-badge hidden">0</span>
+      </button>
+          &emsp;
+    <!--About button-->
   <a href="about.html">
     <button class="inline-flex items-center bg-blue-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0">ABOUT
       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
@@ -40,11 +56,11 @@
 <section class="text-gray-700 body-font">
   <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
     <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-      <h1 class="main title-font sm:text-4xl text-3xl mb-4 font-medium">NEON DREAM
+      <h1 class="main title-font sm:text-4xl text-3xl mb-4 font-medium">NEON DREAMS
       </h1>
       <h2 class="title-font sm:text-4xl text-3xl mb-4 font-medium">Bold & Bright Styles<br>for Your Daring Life
       </h2>
-      <p class="mb-8 leading-relaxed">x+o is a brand all about big statements, bright colors and funky patterns. We may be a little nostalgic, but with a love of modern fashion we keep our eyes out for clothing and accessories that you'll love wearing.</p>
+      <p class="mb-8 leading-relaxed"><strong>x+o</strong> is all about big statements, bright colors, and funky patterns. We may be a little nostalgic but with a love of modern fashion. Expect eye catching clothing and accessories that'll turn your shine on.</p>
       <div class="flex justify-center">
         <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"><a href="#womens">WOMEN'S</a></button>
         <button class="ml-4 inline-flex text-gray-700 bg-gray-200 border-2 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg"><a href="#mens">MEN'S</a></button>
@@ -58,192 +74,38 @@
 
 <canvas id="cone" class="squig"></canvas>
 <!-- end hero / start e-commerce -->
-
+ <div class="container px-5 py-24 mx-auto">
+<!-- WOMEN'S TOPS /////////////// -->
 <section class="text-gray-700 body-font">
-  <div class="container px-5 py-24 mx-auto">
     <h1 id="womens" class="area">WOMEN'S TOPS</h1>
-    <div class="flex flex-wrap -m-4">
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="img/product/shirt/Shirt10.jpg">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-          <p class="mt-1">$16.00</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="img/product/shirt/Shirt11.jpg">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-          <p class="mt-1">$21.15</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="img/product/shirt/Shirt12.jpg">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-          <p class="mt-1">$12.00</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="img/product/shirt/Shirt21.jpg">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-          <p class="mt-1">$18.40</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="img/product/shirt/Shirt5.png">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-          <p class="mt-1">$16.00</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="img/product/shirt/Shirt6.png">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-          <p class="mt-1">$21.15</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="img/product/shirt/Shirt7.jpg">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-          <p class="mt-1">$12.00</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="img/product/shirt/Shirt26.jpg">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-          <p class="mt-1">$18.40</p>
-        </div>
-      </div>
-      <section class="text-gray-700 body-font">
-        <div class="container px-5 py-24 mx-auto">
-          <div class="flex flex-col sm:flex-row sm:items-center items-start mx-auto">
-            <h2 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-gray-900">Load more.</h2>
-            <button class="flex-shrink-0 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg mt-10 sm:mt-0">Women's Tops</button>
-          </div>
-        </div>
-      </section>
-    </div>
-      <!-- /////// MENS /////// --> 
-      <h1 id="mens" class="area">MEN'S SHORT SLEEVES</h1>
-    <div class="flex flex-wrap -m-4">
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="img/product/shirt/Shirt9.jpg">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-          <p class="mt-1">$16.00</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="img/product/shirt/Shirt1.jpg">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-          <p class="mt-1">$21.15</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="img/product/shirt/Shirt2.jpg">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-          <p class="mt-1">$12.00</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="img/product/shirt/Shirt3.jpg">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-          <p class="mt-1">$18.40</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="img/product/shirt/Shirt8.jpg">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">The Catalyzer</h2>
-          <p class="mt-1">$16.00</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="img/product/shirt/Shirt14.jpg">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-          <p class="mt-1">$21.15</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="img/product/shirt/Shirt17.jpg">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-          <p class="mt-1">$12.00</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a class="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="img/product/shirt/Shirt19.jpg">
-        </a>
-        <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-          <p class="mt-1">$18.40</p>
-        </div>
-      </div>
-      <section class="text-gray-700 body-font">
-        <div class="container px-5 py-24 mx-auto">
-          <div class="flex flex-col sm:flex-row sm:items-center items-start mx-auto">
-            <h2 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-gray-900">Load more.</h2>
-            <button class="flex-shrink-0 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg mt-10 sm:mt-0">Men's Short Sleeves</button>
-          </div>
-        </div>
-      </section>
-    </div>
+    <div class="flex flex-wrap -m-4" id="womens_tops"></div>
+
+    <br><br> <br><br> <br><br> 
+
+    <!-- /////// Dresses /////// -->
+    <h1 id="dresses" class="area">DRESSES</h1>
+<div class="flex flex-wrap -m-4" id="dresses_container"></div>
+
+    <br><br>  <br><br>  <br><br>
+
+    <!-- /////// Pants /////// -->
+      <h1 id="pants" class="area">PANTS & SHORTS</h1>
+    <div class="flex flex-wrap -m-4" id="pants_container"></div>
+
+      <br><br>      <br><br>      <br><br>
+      
+    <!-- /////// Accessories /////// -->
+      <h1 id="accessories" class="area">ACCESSORIES</h1>
+    <div class="flex flex-wrap -m-4" id="accessories_container"></div>
+    
+      <br><br>
+      <!-- end accessories -->
+
+      <!-- /////// MENS /////// -->
+    <br><br> <br><br> <br><br> 
+    <h1 id="mens" class="area">MEN'S SHORT SLEEVES</h1>
+    <div class="flex flex-wrap -m-4" id="mens_container"></div>
+    
   </div>
 </section>
 
@@ -300,16 +162,16 @@
         <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">WOMEN'S</h2>
         <nav class="list-none mb-10">
           <li>
-            <a class="text-gray-600 hover:text-gray-800">Tops</a>
+            <a href="#womens" class="text-gray-600 hover:text-gray-800">Tops</a>
           </li>
           <li>
-            <a class="text-gray-600 hover:text-gray-800">Shorts</a>
+            <a href="#dresses" class="text-gray-600 hover:text-gray-800">Dresses</a>
           </li>
           <li>
-            <a class="text-gray-600 hover:text-gray-800">Shoes</a>
+            <a href="#pants" class="text-gray-600 hover:text-gray-800">Shorts</a>
           </li>
           <li>
-            <a class="text-gray-600 hover:text-gray-800">Accessories</a>
+            <a href="#accessories" class="text-gray-600 hover:text-gray-800">Accessories</a>
           </li>
         </nav>
       </div>
@@ -317,7 +179,7 @@
         <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">MEN'S</h2>
         <nav class="list-none mb-10">
           <li>
-            <a class="text-gray-600 hover:text-gray-800">Tees</a>
+            <a href="#mens" class="text-gray-600 hover:text-gray-800">Tees</a>
           </li>
           <li>
             <a class="text-gray-600 hover:text-gray-800">Shorts</a>
@@ -372,7 +234,7 @@
         <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-black-600 ml-1" target="_blank">@xpluso</a>
       </p>
       <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
-        <a class="text-black-500">
+        <!-- <a class="text-black-500">
           <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
             <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
           </svg>
@@ -381,14 +243,14 @@
           <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
             <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
           </svg>
-        </a>
-        <a class="ml-3 text-black-500">
+        </a> -->
+        <a href="https://www.instagram.com/d_l_i_g_h_t_n_i_n_g/" class="ml-3 text-black-500">
           <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
             <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
             <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
           </svg>
         </a>
-        <a class="ml-3 text-black-900">
+        <a href="https://www.linkedin.com/company/dlightning/" class="ml-3 text-black-900">
           <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
             <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
             <circle cx="4" cy="4" r="2" stroke="none"></circle>
@@ -400,7 +262,323 @@
 </footer>
 
 <canvas id="cube" class="cube"></canvas>
+<!-- Product Modal -->
+<div id="product-modal" class="fixed inset-0 modal-overlay z-50 hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
+    <div class="p-6">
+      <!-- Modal Header -->
+      <div class="flex justify-between items-center mb-6">
+        <h2 id="modal-title" class="text-2xl font-bold" style="color: var(--hotpink);">Product Details</h2>
+        <button id="close-modal" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+      </div>
+
+      <!-- Modal Content -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Product Image -->
+        <div>
+          <div id="modal-image-container" class="w-full h-96 border-2 border-gray-200 rounded overflow-hidden">
+            <img id="modal-image" class="w-full h-full object-cover hidden" src="" alt="">
+            <canvas id="modal-canvas" class="w-full h-full hidden"></canvas>
+          </div>
+        </div>
+
+        <!-- Product Details -->
+        <div class="space-y-6">
+          <div>
+            <p id="modal-category" class="text-sm text-gray-500 uppercase tracking-widest"></p>
+            <h3 id="modal-name" class="text-2xl font-bold text-gray-900"></h3>
+            <p id="modal-price" class="text-xl font-semibold mt-2" style="color: var(--blue);"></p>
+          </div>
+
+          <div>
+            <p id="modal-description" class="text-gray-600 mb-4">Express your daring style with this bold Memphis-inspired piece. Perfect for making a statement and turning heads wherever you go.</p>
+          </div>
+
+          <!-- Size Selection -->
+          <div>
+            <h4 class="font-semibold mb-3">Size</h4>
+            <div class="flex space-x-2">
+              <button class="size-option px-4 py-2 text-sm font-semibold" data-size="XS">XS</button>
+              <button class="size-option px-4 py-2 text-sm font-semibold" data-size="S">S</button>
+              <button class="size-option px-4 py-2 text-sm font-semibold selected" data-size="M">M</button>
+              <button class="size-option px-4 py-2 text-sm font-semibold" data-size="L">L</button>
+              <button class="size-option px-4 py-2 text-sm font-semibold" data-size="XL">XL</button>
+            </div>
+          </div>
+
+          <!-- Quantity -->
+          <div>
+            <h4 class="font-semibold mb-3">Quantity</h4>
+            <div class="flex items-center space-x-2">
+              <button id="qty-minus" class="quantity-btn">-</button>
+              <span id="quantity" class="px-4 py-2 border text-center w-16">1</span>
+              <button id="qty-plus" class="quantity-btn">+</button>
+            </div>
+          </div>
+
+          <!-- Add to Cart Button -->
+          <button id="add-to-cart" class="btn-primary w-full text-lg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cart Modal -->
+<div id="cart-modal" class="fixed inset-0 modal-overlay z-50 hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-lg max-w-2xl w-full max-h-screen overflow-y-auto">
+    <div class="p-6">
+      <!-- Cart Header -->
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold" style="color: var(--hotpink);">Shopping Cart</h2>
+        <button id="close-cart" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+      </div>
+
+      <!-- Cart Items -->
+      <div id="cart-items" class="space-y-4 mb-6">
+        <!-- Cart items will be dynamically inserted here -->
+      </div>
+
+      <!-- Cart Empty State -->
+      <div id="cart-empty" class="text-center py-8 hidden">
+        <p class="text-gray-500 text-lg">Your cart is empty</p>
+        <p class="text-gray-400">Add some bold styles to get started!</p>
+      </div>
+
+      <!-- Cart Summary -->
+      <div id="cart-summary" class="border-t pt-4 hidden">
+        <div class="flex justify-between items-center text-xl font-bold mb-4">
+          <span>Total:</span>
+          <span id="cart-total" style="color: var(--blue);">$0.00</span>
+        </div>
+        <div class="flex space-x-4">
+          <button class="btn-secondary flex-1">Continue Shopping</button>
+          <button class="btn-primary flex-1">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Shopping Cart Class
+class ShoppingCart {
+  constructor() {
+    this.items = [];
+    this.init();
+  }
+
+  init() {
+    // Generate Memphis patterns for product thumbnails
+    $('.memphis-pattern').each(function() {
+      MemphisGenerator.generate(this);
+    });
+
+    // Bind events
+    this.bindEvents();
+    this.updateCartDisplay();
+  }
+
+  bindEvents() {
+    // Product click handler
+    $(document).on('click', '.product-item', (e) => {
+      e.preventDefault();
+      const productData = JSON.parse($(e.currentTarget).attr('data-product'));
+      this.openProductModal(productData);
+    });
+
+    // Modal close handlers
+    $('#close-modal, #product-modal').on('click', (e) => {
+      if (e.target.id === 'close-modal' || e.target.id === 'product-modal') {
+        $('#product-modal').addClass('hidden');
+      }
+    });
+
+    $('#close-cart, #cart-modal').on('click', (e) => {
+      if (e.target.id === 'close-cart' || e.target.id === 'cart-modal') {
+        $('#cart-modal').addClass('hidden');
+      }
+    });
+
+    // Size selection
+    $(document).on('click', '.size-option', (e) => {
+      $('.size-option').removeClass('selected');
+      $(e.target).addClass('selected');
+    });
+
+    // Quantity controls
+    $('#qty-minus').on('click', () => {
+      const qty = parseInt($('#quantity').text());
+      if (qty > 1) {
+        $('#quantity').text(qty - 1);
+      }
+    });
+
+    $('#qty-plus').on('click', () => {
+      const qty = parseInt($('#quantity').text());
+      $('#quantity').text(qty + 1);
+    });
+
+    // Add to cart
+    $('#add-to-cart').on('click', () => {
+      this.addToCart();
+    });
+
+    // Cart button
+    $('#cart-btn').on('click', () => {
+      this.openCartModal();
+    });
+
+    // Remove from cart
+    $(document).on('click', '.remove-item', (e) => {
+      const index = $(e.target).data('index');
+      this.removeFromCart(index);
+    });
+  }
+
+  openProductModal(product) {
+    $('#modal-category').text(product.category);
+    $('#modal-name').text(product.name);
+    $('#modal-price').text(`$${product.price.toFixed(2)}`);
+    $('#quantity').text('1');
+    $('.size-option').removeClass('selected');
+    $('.size-option[data-size="M"]').addClass('selected');
+
+    // Store current product data
+    $('#product-modal').data('product', product);
+
+    // Use actual product description instead of placeholder
+    $('#modal-description').text(product.description || 'Express your daring style with this bold Memphis-inspired piece. Perfect for making a statement and turning heads wherever you go.');
+
+      $('#modal-image').attr('src', product.image).removeClass('hidden');
+      $('#modal-canvas').addClass('hidden');
+    
+    $('#product-modal').removeClass('hidden');
+  }
+
+  addToCart() {
+    const product = $('#product-modal').data('product');
+    const size = $('.size-option.selected').data('size');
+    const quantity = parseInt($('#quantity').text());
+
+    const cartItem = {
+      id: Date.now(), // Simple unique ID
+      productId: product.id,
+      name: product.name,
+      price: product.price,
+      size: size,
+      quantity: quantity,
+      image: product.image,
+      type: product.type
+    };
+
+    this.items.push(cartItem);
+    this.updateCartDisplay();
+    $('#product-modal').addClass('hidden');
+
+    // Show success message (optional)
+    this.showMessage('Added to cart!');
+  }
+
+  removeFromCart(index) {
+    this.items.splice(index, 1);
+    this.updateCartDisplay();
+    this.updateCartModal();
+  }
+
+  updateCartDisplay() {
+    const count = this.items.reduce((total, item) => total + item.quantity, 0);
+    if (count > 0) {
+      $('#cart-count').text(count).removeClass('hidden');
+    } else {
+      $('#cart-count').addClass('hidden');
+    }
+  }
+
+  openCartModal() {
+    this.updateCartModal();
+    $('#cart-modal').removeClass('hidden');
+  }
+
+  updateCartModal() {
+    const $cartItems = $('#cart-items');
+    const $cartEmpty = $('#cart-empty');
+    const $cartSummary = $('#cart-summary');
+
+    if (this.items.length === 0) {
+      $cartItems.empty();
+      $cartEmpty.removeClass('hidden');
+      $cartSummary.addClass('hidden');
+      return;
+    }
+
+    $cartEmpty.addClass('hidden');
+    $cartSummary.removeClass('hidden');
+
+    // Render cart items
+    $cartItems.html(this.items.map((item, index) => `
+      <div class="cart-item flex items-center space-x-4">
+        <div class="w-16 h-16 bg-gray-200 rounded overflow-hidden flex-shrink-0">
+           <img src="${item.image}" class="w-full h-full object-cover" alt="${item.name}"> 
+        </div>
+        <div class="flex-grow">
+          <h4 class="font-semibold">${item.name}</h4>
+          <p class="text-sm text-gray-500">Size: ${item.size} • Qty: ${item.quantity}</p>
+          <p class="font-semibold" style="color: var(--blue);">$${(item.price * item.quantity).toFixed(2)}</p>
+        </div>
+        <button class="remove-item text-red-500 hover:text-red-700" data-index="${index}">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </div>
+    `).join(''));
+
+    // Update total
+    const total = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    $('#cart-total').text(`$${total.toFixed(2)}`);
+  }
+
+  showMessage(message) {
+    // Simple toast notification
+    const $toast = $(`
+      <div class="fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded shadow-lg z-50">
+        ${message}
+      </div>
+    `);
+    
+    $('body').append($toast);
+    setTimeout(() => {
+      $toast.fadeOut(() => $toast.remove());
+    }, 2000);
+  }
+}
+
+// Initialize the shopping cart
+$(document).ready(() => {
+  new ShoppingCart();
+});
+
+// Usage example:
+$(document).ready(function() {
+  // Initialize the product renderer
+  const productRenderer = new ProductRenderer();
+  
+  // Example of adding a new product
+  /*
+  productRenderer.addProduct('womens_tops', {
+    id: 999,
+    name: "New Bold Design",
+    price: 55.00,
+    category: "TOPS",
+    image: "img/product/shirt/new-shirt.jpg",
+    description: "Fresh Memphis-inspired design for the modern woman."
+  });
+  */
+});
+</script>
 <script  src="js/script.js"></script>
+<script  src="js/products.js"></script>
 
 </body>
 </html>
