@@ -26,7 +26,7 @@ html{
 :root {
 --main-bg: #cdcdcd;
 --hotpink: #fe7cba;
---pink: #fdc7df;
+--pink: #ffd2e6;
 --blue: #39b3fe;
 --green: #2bedba;
 --yellow: #ffdb00;
@@ -48,6 +48,13 @@ h1{
   color: var(--hotpink);
 }
 
+header{
+  background-color: var(--pink);
+  position: sticky;
+  top: 0;
+  z-index: 909909;
+}
+
 button{
   line-height: normal !important;
   padding: 12px 20px 8px 20px !important;
@@ -60,6 +67,7 @@ button{
 
 .area{
   font-size: 4.25em !important;
+  padding-top: 54px;
 }
 
 h2{
