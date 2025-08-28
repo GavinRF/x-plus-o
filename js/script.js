@@ -266,6 +266,71 @@ new Zdog.Ellipse({
   // backface: false,
 });
 
+//canvas4 Snake
+ var snakeIllo = new Zdog.Illustration({
+            element: '.snake-canvas',
+            dragRotate: true,
+            resize: true,
+            zoom: 2,
+            onDragStart: function() {
+              notGrabbed = false;
+            },
+        });
+
+        new Zdog.Shape({
+            addTo: snakeIllo,
+            path: [
+                { x: -60, y: 0 },
+                { arc: [{ x: -30, y: -30 }, { x: 0, y: 0 }] },
+                { arc: [{ x: 30, y: 30 }, { x: 60, y: 0 }] },
+                { arc: [{ x: 90, y: -30 }, { x: 120, y: 0 }] }
+            ],
+            closed: false,
+            stroke: 12,
+            color: hotpink
+        });
+
+        // Add pill-shaped capsules in different directions
+        var pillData = [
+            { x: -50, y: -10, rotX: 0.3, rotZ: 0.2, color: blue },
+            { x: -20, y: 15, rotX: -0.5, rotZ: 0.8, color: yellow },
+            { x: 10, y: -20, rotX: 0.7, rotZ: -0.4, color: green },
+            { x: 40, y: 25, rotX: -0.2, rotZ: 0.6, color: blue },
+            { x: 70, y: -5, rotX: 0.9, rotZ: -0.1, color: yellow },
+            { x: 95, y: 20, rotX: -0.6, rotZ: 0.4, color: green }
+        ];
+
+        pillData.forEach(pill => {
+            new Zdog.Cylinder({
+                addTo: snakeIllo,
+                diameter: 8,
+                length: 20,
+                translate: { x: pill.x, y: pill.y, z: Math.random() * 10 - 5 },
+                rotate: { x: pill.rotX, z: pill.rotZ },
+                color: pill.color,
+                stroke: false
+            });
+        });
+
+        // Snake animation
+       function animateSnake() {
+        if (isSpinning) {
+          var progress = ticker / cycleCount;
+          var theta = Zdog.easeInOut(progress % 14, 13) * TAU;
+          snakeIllo.rotate.y = theta * 0.6;
+          snakeIllo.rotate.x = Math.sin(theta) * 1.5;
+          snakeIllo.rotate.z = Math.sin(theta) * -0.2;
+          ticker++;
+        }
+        snakeIllo.updateRenderGraph();
+        requestAnimationFrame(animateSnake);
+        }
+
+        snakeIllo.onDragStart = function() {
+        isSpinning = false;
+        };
+
+        animateSnake();
 
 //~
 // new Zdog.Shape({
@@ -350,8 +415,6 @@ animate();
 animate2();
 animate3();
 
-
-
 // let starGroup;
 // let stars = [];
 // let starCount = 400;
@@ -384,3 +447,191 @@ animate3();
 //      })
 //   });
 // }
+
+
+/// CLUSTER SHAPES
+
+var clusterIllo = new Zdog.Illustration({
+ element: '.cluster-canvas',
+ dragRotate: true,
+ resize: true,
+ zoom: 2.5
+});
+
+var shapes = [
+ { type: 'sphere', pos: [0, 0, 0], color: hotpink, size: 25, rotX: 0.3, rotY: -0.2, rotZ: 0.8 },
+ { type: 'cube', pos: [-45, -25, 15], color: blue, size: 12, rotX: 0.7, rotY: 0.4, rotZ: -0.3 },
+ { type: 'cylinder', pos: [40, -20, -15], color: yellow, size: 18, rotX: -0.5, rotY: 0.9, rotZ: 0.1 },
+ { type: 'cone', pos: [-30, 30, 25], color: green, size: 22, rotX: 0.2, rotY: -0.6, rotZ: 0.5 },
+ { type: 'sphere', pos: [50, 25, -25], color: pink, size: 16, rotX: -0.8, rotY: 0.3, rotZ: -0.1 },
+ { type: 'cube', pos: [15, -40, 10], color: hotpink, size: 8, rotX: 0.6, rotY: -0.4, rotZ: 0.7 },
+ { type: 'cylinder', pos: [-55, 10, -5], color: blue, size: 14, rotX: -0.3, rotY: 0.8, rotZ: -0.6 },
+ { type: 'cone', pos: [25, 45, 20], color: yellow, size: 10, rotX: 0.9, rotY: -0.1, rotZ: 0.3 },
+ { type: 'sphere', pos: [-20, -15, -30], color: green, size: 20, rotX: -0.2, rotY: 0.5, rotZ: -0.4 }
+];
+
+shapes.forEach(shape => {
+ if(shape.type === 'sphere') {
+   new Zdog.Hemisphere({
+     addTo: clusterIllo,
+     diameter: shape.size,
+     translate: { x: shape.pos[0], y: shape.pos[1], z: shape.pos[2] },
+     rotate: { x: shape.rotX, y: shape.rotY, z: shape.rotZ },
+     color: shape.color,
+     stroke: false
+   });
+ } else if(shape.type === 'cube') {
+   new Zdog.Box({
+     addTo: clusterIllo,
+     width: shape.size, height: shape.size, depth: shape.size,
+     translate: { x: shape.pos[0], y: shape.pos[1], z: shape.pos[2] },
+     rotate: { x: shape.rotX, y: shape.rotY, z: shape.rotZ },
+     color: shape.color,
+     stroke: false
+   });
+ } else if(shape.type === 'cylinder') {
+   new Zdog.Cylinder({
+     addTo: clusterIllo,
+     diameter: shape.size,
+     length: shape.size * 1.5,
+     translate: { x: shape.pos[0], y: shape.pos[1], z: shape.pos[2] },
+     rotate: { x: shape.rotX, y: shape.rotY, z: shape.rotZ },
+     color: shape.color,
+     stroke: false
+   });
+ } else if(shape.type === 'cone') {
+   new Zdog.Cone({
+     addTo: clusterIllo,
+     diameter: shape.size,
+     length: shape.size * 1.2,
+     translate: { x: shape.pos[0], y: shape.pos[1], z: shape.pos[2] },
+     rotate: { x: shape.rotX, y: shape.rotY, z: shape.rotZ },
+     color: shape.color,
+     stroke: false
+   });
+ }
+});
+
+var ticker3 = 10;
+var cycleCount3 = 1660;
+
+function animateCluster() {
+ if (notGrabbed) {
+   var progress = ticker3 / cycleCount3;
+   var theta = Zdog.easeInOut(progress % 1, 3) * TAU;
+   clusterIllo.rotate.y = theta * 2;
+   clusterIllo.rotate.x = Math.sin(theta) * -0.4;
+   clusterIllo.rotate.z = Math.sin(theta) * -0.7;
+   ticker3++;
+ }
+ clusterIllo.updateRenderGraph();
+ requestAnimationFrame(animateCluster);
+}
+
+clusterIllo.onDragStart = function() {
+ notGrabbed = false;
+};
+
+animateCluster();
+
+
+// ------------------ Lightning Canvas ------------------ //
+
+function initLightningCanvas() {
+  const canvas = document.getElementById('lightning');
+  if (!canvas) return;
+
+var lightningIllo = new Zdog.Illustration({
+  element: '.lightning-canvas',
+  dragRotate: true,
+  resize: true,
+  zoom: .81,
+  rotate: { y: -TAU/3 }
+});
+
+// ------------------ Flat Bolt Generator ------------------ //
+function makeRandomBolt(options = {}) {
+  const {
+    steps = 5,
+    stepSize = 6,
+    zigzag = 60,
+    stroke = 18,
+    translate = { x: 0, y: 0, z: 0 },
+    color = yellow
+  } = options;
+
+  let path = [];
+  let x = 0, y = -100;
+  path.push({ x, y });
+
+  for (let i = 0; i < steps; i++) {
+    // Alternate zig direction, but with randomness
+    let dir = (i % 2 === 0 ? 1 : -1);
+    x += dir * (zigzag * 0.5 + Math.random() * zigzag * 0.5);
+    y += stepSize + Math.random() * stepSize * 0.5;
+    path.push({ x, y });
+  }
+
+  // Base bolt
+  new Zdog.Shape({
+    addTo: lightningIllo,
+    path,
+    closed: false,
+    stroke,
+    color,
+    translate,
+    updateSort: true
+  });
+
+  // Pink overlays
+  new Zdog.Shape({
+    addTo: lightningIllo,
+    path,
+    closed: false,
+    stroke: stroke / 2,
+    color: hotpink,
+    translate: { ...translate, z: 3 }
+  });
+  new Zdog.Shape({
+    addTo: lightningIllo,
+    path,
+    closed: false,
+    stroke: stroke / 2,
+    color: hotpink,
+    translate: { ...translate, z: -3 }
+  });
+}
+
+// ------------------ Bolt Pattern Generator ------------------ //
+let cols = 11;
+let rows = 8;
+let spacingX = 180;
+let spacingY = 170;
+let rowOffset = spacingX / 2; // how much to stagger every other row
+
+for (let i = 0; i < cols; i++) {
+  for (let j = 0; j < rows; j++) {
+    let offsetX = (j % 2 === 0 ? 0 : rowOffset); // stagger every other row
+
+    makeRandomBolt({
+      steps: 4 + Math.floor(Math.random() * 4),   // random length
+      stepSize: 10 + Math.random() * 10,
+      zigzag: 50 + Math.random() * 30,
+      stroke: 12 + Math.random() * 6,
+      translate: {
+        x: (i - (cols - 1) / 2) * spacingX + offsetX,
+        y: (j - (rows - 1) / 2) * spacingY,
+        z: 0   // flat plane
+      }
+    });
+  }
+}
+
+// ------------------ Animation ------------------ //
+function animateBolt() {
+  lightningIllo.rotate.y = Math.sin(Date.now() / 1200) * 0.08; // subtle sway
+  lightningIllo.updateRenderGraph();
+  requestAnimationFrame(animateBolt);
+}
+animateBolt();
+}

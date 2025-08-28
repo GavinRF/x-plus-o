@@ -13,7 +13,7 @@
 <body>
 <header class="text-gray-700 body-font">
   <div class="container mx-auto flex flex-wrap p-2 flex-col md:flex-row items-center">
-    <a href="index.html" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+    <a href="#canvas" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-10 h-10 text-white p-2 bg-pink-500 rounded-full" viewBox="0 0 24 24">
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
       </svg>
@@ -24,7 +24,7 @@
       <a href="#dresses" class="mr-5">DRESSES</a>
       <a href="#pants" class="mr-5">SHORTS</a>
       <a href="#accessories" class="mr-5">ACCESSORIES</a>
-      <a href="#mens" class="mr-5">MENS</a>
+      <a href="#mens" class="mr-5">MEN'S</a>
       <!-- <a class="mr-5">SALE</a> -->
 <!--       <a class="mr-5 hover:text-gray-900">Accessories</a> -->
     </nav>
@@ -73,8 +73,32 @@
 </section>
 
 <canvas id="cone" class="squig"></canvas>
+
 <!-- end hero / start e-commerce -->
  <div class="container px-5 py-24 mx-auto">
+<!-- /////// END OF SUMMER SALE BANNER/////// -->
+  <!-- END OF SUMMER SALE BANNER -->
+<div class="flex flex-col md:flex-row min-h-32">
+  <div class="flex-1 flex items-center justify-center relative p-6" style="background: var(--hotpink);">
+    <div class="text-center text-white">
+      <h3 class="text-2xl md:text-3xl font-bold mb-2">END OF SUMMER</h3>
+      <p style="border-top: 1px solid white; border-bottom: 1px solid white;" class="text-lg">CLEARANCE</p>
+    </div>
+  </div>
+  <div class="flex-1 flex items-center justify-center relative p-6" style="background: var(--yellow);">
+    <div class="text-center" style="color: var(--black)">
+      <div class="text-4xl md:text-5xl mb-1" style="color: var(--hotpink); font-family: Now-Black; text-shadow: 1px 1px 0 var(--black), 2px 2px 0 var(--blue), 3px 3px 0 var(--green), 4px 4px 0 var(--pink), 5px 5px 0 var(--pink);">25-40%</div>
+      <div class="text-lg font-semibold">Off Everything</div>
+    </div>
+  </div>
+  <div class="flex-1 flex items-center justify-center relative p-6" style="background: var(--blue);">
+    <a href="#womens"><button class="bg-white px-6 py-3 rounded-full font-bold text-lg hover:shadow-lg transition-all duration-300" style="color: var(--hotpink);">
+      SHOP SALE
+    </button></a>
+  </div>
+</div>
+<!-- END BANNER -->
+  
 <!-- WOMEN'S TOPS /////////////// -->
 <section class="text-gray-700 body-font">
     <h1 id="womens" class="area">WOMEN'S TOPS</h1>
@@ -92,11 +116,15 @@
       <h1 id="pants" class="area">PANTS & SHORTS</h1>
     <div class="flex flex-wrap -m-4" id="pants_container"></div>
 
+    <canvas id="snake" class="snake-canvas"></canvas>
+
       <br><br> <br><br> 
       
     <!-- /////// Accessories /////// -->
       <h1 id="accessories" class="area">ACCESSORIES</h1>
     <div class="flex flex-wrap -m-4" id="accessories_container"></div>
+
+    <canvas id="cluster" class="cluster-canvas"></canvas>
     
       <br><br>
       <!-- end accessories -->
@@ -181,7 +209,7 @@
           <li>
             <a href="#mens" class="text-gray-600 hover:text-gray-800">Tees</a>
           </li>
-          <li>
+          <!-- <li>
             <a class="text-gray-600 hover:text-gray-800">Shorts</a>
           </li>
           <li>
@@ -189,23 +217,24 @@
           </li>
           <li>
             <a class="text-gray-600 hover:text-gray-800">Slacks</a>
-          </li>
+          </li> -->
         </nav>
       </div>
       <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">HOME</h2>
+        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">HOME GOODS</h2>
+        <p>(Coming Soon)</p>
         <nav class="list-none mb-10">
           <li>
-            <a class="text-gray-600 hover:text-gray-800">Soft Goods</a>
+            <a class="text-gray-600 hover:text-gray-800 line-through">Soft Goods</a>
           </li>
           <li>
-            <a class="text-gray-600 hover:text-gray-800">Furniture</a>
+            <a class="text-gray-600 hover:text-gray-800 line-through">Furniture</a>
           </li>
           <li>
-            <a class="text-gray-600 hover:text-gray-800">Wall Art</a>
+            <a class="text-gray-600 hover:text-gray-800 line-through">Wall Art</a>
           </li>
           <li>
-            <a class="text-gray-600 hover:text-gray-800">Chachski</a>
+            <a class="text-gray-600 hover:text-gray-800 line-through">Chachski</a>
           </li>
         </nav>
       </div>
@@ -213,16 +242,16 @@
         <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">ABOUT</h2>
         <nav class="list-none mb-10">
           <li>
-            <a class="text-gray-600 hover:text-gray-800">About Us</a>
+            <a href="about.html" class="text-gray-600 hover:text-gray-800">About Us</a>
           </li>
           <li>
-            <a class="text-gray-600 hover:text-gray-800">Contact</a>
+            <a href="about.html#contactForm" class="text-gray-600 hover:text-gray-800">Contact</a>
           </li>
           <li>
-            <a class="text-gray-600 hover:text-gray-800">Terms of Service</a>
+            <a href="https://dlightning.org/tos.html" class="text-gray-600 hover:text-gray-800">Terms of Service</a>
           </li>
           <li>
-            <a class="text-gray-600 hover:text-gray-800">Careers</a>
+            <a href="https://dlightning.org/careers/careers-list.html" class="text-gray-600 hover:text-gray-800">Careers</a>
           </li>
         </nav>
       </div>
@@ -231,7 +260,7 @@
   <div class="baseline">
     <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
       <p class="text-black-500 text-sm text-center sm:text-left">© 2020 x+o —
-        <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-black-600 ml-1" target="_blank">@xpluso</a>
+        <a href="#" rel="noopener noreferrer" class="text-black-600 ml-1" target="_blank">@xpluso</a>
       </p>
       <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
         <!-- <a class="text-black-500">
@@ -262,6 +291,7 @@
 </footer>
 
 <canvas id="cube" class="cube"></canvas>
+
 <!-- Product Modal -->
 <div id="product-modal" class="fixed inset-0 modal-overlay z-50 hidden flex items-center justify-center p-4">
   <div class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
@@ -360,6 +390,40 @@
   </div>
 </div>
 
+<!-- Checkout modal -->
+
+ <div id="checkout-modal" class="fixed inset-0 modal-overlay z-50 hidden flex items-center justify-center p-4">
+
+  <div class="bg-white rounded-lg max-w-lg w-full">
+    <div class="p-8 text-center">
+      <!-- Modal Header -->
+      <div class="mb-6">
+        <svg class="w-16 h-16 mx-auto mb-4 text-pink-500" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+        </svg>
+        <h2 class="text-3xl font-bold mb-2" style="color: var(--hotpink);">Thanks for Shopping!</h2>
+      </div>
+
+      <!-- Modal Content -->
+      <div class="space-y-4 mb-6">
+
+        <p class="text-lg text-gray-700">We love that you enjoyed browsing our bold Memphis-inspired collection!</p>
+        <p class="text-gray-600">However, this store doesn't actually exist - it's a creative showcase from the minds at <a href="https://dlightning.org/"><strong style="color: var(--blue);">Dlightning</strong></a>.</p>
+        <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-4">
+          <p class="text-sm text-gray-700">This is a demo site showcasing web development and design. No real purchases can be made.</p>
+        </div>
+      </div>
+
+      <!-- Close Button -->
+      <button id="close-checkout" class="btn-primary px-8 py-3 text-lg">Got it!</button>
+      <a href="https://dlightning.org/"><button id="close-checkout" class="btn-primary px-8 py-3 text-lg">Visit Dlightning</button></a>
+    </div>
+  </div>
+
+    <canvas id="lightning" class="lightning-canvas"></canvas>
+
+</div>
+
 <script>
 // Shopping Cart Class
 class ShoppingCart {
@@ -429,12 +493,38 @@ class ShoppingCart {
       this.openCartModal();
     });
 
+    // Continue shopping - closes cart modal
+    $(document).on('click', '.btn-secondary', () => {
+      $('#cart-modal').addClass('hidden');
+    });
+
+    // Checkout button - opens checkout modal
+    $(document).on('click', '.btn-primary:contains("Checkout")', (e) => {
+      if ($(e.target).text().trim() === 'Checkout') {
+        $('#cart-modal').addClass('hidden');
+        $('#checkout-modal').removeClass('hidden');
+      }
+        initLightningCanvas();
+
+    });
+
+    // Close checkout modal
+    $('#close-checkout, #checkout-modal').on('click', (e) => {
+      if (e.target.id === 'close-checkout' || e.target.id === 'checkout-modal') {
+        $('#checkout-modal').addClass('hidden');
+        // Clear the cart after checkout
+        this.items = [];
+        this.updateCartDisplay();
+      }
+    });
+
     // Remove from cart
     $(document).on('click', '.remove-item', (e) => {
       const index = $(e.target).data('index');
       this.removeFromCart(index);
     });
   }
+  
 
   openProductModal(product) {
     $('#modal-category').text(product.category);

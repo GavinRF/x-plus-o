@@ -95,10 +95,39 @@ body{
 #cone{
   position: relative;
   width: 455px;
-  height: 445px;
+  height: 455px;
   margin: -460px 0 -100px auto;
   cursor: grab;
   background: transparent;
+}
+
+#snake{
+  position: relative;
+  width: 555px;
+  height: 555px;
+  margin: -340px 100px -240px auto;
+  cursor: grab;
+  background: transparent;
+}
+
+#cluster {
+  position: relative;
+  width: 885px;
+  height: 655px;
+  margin: -410px 100px -300px auto;
+  cursor: grab;
+  background: transparent;
+}
+
+#lightning {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  cursor: grab;
+  background: transparent;
+  z-index: -1;
 }
 
 #cube{
