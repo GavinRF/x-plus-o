@@ -90,7 +90,7 @@ const PRODUCTS = {
     "name": "Market Day Midi",
     "price": 78.00,
     "category": "DRESSES",
-    "image": "img/product/dress/Dress1.jpg",
+    "image": "img/product/dress/dress1.jpg",
     "description": "Strapless midi dress with abstract blob print in coral and navy on soft pink canvas. Perfect for farmers market strolls and weekend adventures."
   },
   {
@@ -98,7 +98,7 @@ const PRODUCTS = {
     "name": "Eclipse Elegance",
     "price": 95.00,
     "category": "DRESSES",
-    "image": "img/product/dress/Dress2.jpg",
+    "image": "img/product/dress/dress2.jpg",
     "description": "Sophisticated sleeveless dress featuring bold geometric color blocking with white circle motif and sunshine yellow hem. Modern minimalism meets Memphis style."
   },
   {
@@ -106,7 +106,7 @@ const PRODUCTS = {
     "name": "Tropical Halter Jumpsuit",
     "price": 88.00,
     "category": "JUMPSUITS",
-    "image": "img/product/dress/Dress3.png",
+    "image": "img/product/dress/dress3.png",
     "description": "Vibrant halter jumpsuit with abstract leaf print in sunset colors. Belted waist and flowing silhouette for effortless vacation vibes."
   },
   {
@@ -114,7 +114,7 @@ const PRODUCTS = {
     "name": "Santorini Sunset",
     "price": 85.00,
     "category": "MAXI DRESSES",
-    "image": "img/product/dress/Dress4.jpg",
+    "image": "img/product/dress/dress4.jpg",
     "description": "Strapless maxi dress with bold color blocks in coral and cobalt blue. Mediterranean-inspired design perfect for seaside evenings."
   },
   {
@@ -122,7 +122,7 @@ const PRODUCTS = {
     "name": "Memphis Mondrian Mini",
     "price": 65.00,
     "category": "MINI DRESSES",
-    "image": "img/product/dress/Dress5.jpg",
+    "image": "img/product/dress/dress5.jpg",
     "description": "Short sleeve mini dress covered in authentic Memphis patterns - grids, dots, and geometric shapes in primary colors. Pure 80s architectural energy."
   },
   {
@@ -138,7 +138,7 @@ const PRODUCTS = {
     "name": "Abstract Garden Maxi",
     "price": 110.00,
     "category": "MAXI DRESSES",
-    "image": "img/product/dress/Dress7.png",
+    "image": "img/product/dress/dress7.png",
     "description": "Flowing spaghetti strap maxi dress with bold abstract floral print in turquoise, coral, and navy. Artistic expression meets bohemian elegance."
   },
   {
@@ -146,7 +146,7 @@ const PRODUCTS = {
     "name": "Neon Nights Mini",
     "price": 72.00,
     "category": "MINI DRESSES",
-    "image": "img/product/dress/Dress8.jpg",
+    "image": "img/product/dress/dress8.jpg",
     "description": "Long-sleeve mini dress with electric Memphis pattern in neon brights and geometric shapes. Bold turtleneck design for the fearlessly fashionable."
   }
 ],
@@ -157,7 +157,7 @@ const PRODUCTS = {
     "name": "Primary Pop Shorts",
     "price": 68.00,
     "category": "SHORTS",
-    "image": "img/product/pants/Pants1.jpg",
+    "image": "img/product/pants/pants1.jpg",
     "description": "High-waisted denim shorts with bold color-blocked panels in red, blue, yellow, and green. Classic meets contemporary in this playful Memphis-inspired design."
   },
   {
@@ -165,7 +165,7 @@ const PRODUCTS = {
     "name": "Geometric Glitch Set",
     "price": 145.00,
     "category": "SETS",
-    "image": "img/product/pants/Pants2.jpg",
+    "image": "img/product/pants/pants2.jpg",
     "description": "Two-piece set featuring abstract geometric patterns in neon brights. Sleeveless top and matching high-waisted pants for the ultimate statement look."
   },
   {
@@ -173,7 +173,7 @@ const PRODUCTS = {
     "name": "Pattern Mix Madness",
     "price": 58.00,
     "category": "SHORTS",
-    "image": "img/product/pants/Pants3.jpg",
+    "image": "img/product/pants/pants3.jpg",
     "description": "Collection of color-blocked shorts featuring stripes, solids, and mixed patterns. Each pair is a unique work of wearable art in bright Memphis colors."
   },
   {
@@ -181,7 +181,7 @@ const PRODUCTS = {
     "name": "Street Art Trousers",
     "price": 95.00,
     "category": "PANTS",
-    "image": "img/product/pants/Pants4.jpg",
+    "image": "img/product/pants/pants4.jpg",
     "description": "Straight-leg pants covered in graffiti-inspired Memphis patterns with checkered details. Urban edge meets 80s design rebellion."
   },
   {
@@ -189,7 +189,7 @@ const PRODUCTS = {
     "name": "Dalmatian Dreams",
     "price": 52.00,
     "category": "SHORTS",
-    "image": "img/product/pants/Pants5.jpg",
+    "image": "img/product/pants/pants5.jpg",
     "description": "High-waisted denim shorts with playful black and white cow print detailing. A fun twist on the classic animal print trend."
   },
   {
@@ -197,7 +197,7 @@ const PRODUCTS = {
     "name": "Stripe & Block Fusion",
     "price": 65.00,
     "category": "SHORTS",
-    "image": "img/product/pants/Pants6.jpg",
+    "image": "img/product/pants/pants6.jpg",
     "description": "Color-blocked denim shorts combining solid panels with bold blue and white stripes. Perfect balance of pattern and color for summer adventures."
   },
   {
@@ -205,7 +205,7 @@ const PRODUCTS = {
     "name": "Digital Pop Jeans",
     "price": 78.00,
     "category": "JEANS",
-    "image": "img/product/pants/Pants7.jpg",
+    "image": "img/product/pants/pants7.jpg",
     "description": "Relaxed-fit jeans featuring abstract digital-inspired prints in electric blues and bright accents. Comfort meets contemporary art."
   },
   {
@@ -213,7 +213,7 @@ const PRODUCTS = {
     "name": "Shape Shuffle Shorts",
     "price": 48.00,
     "category": "SHORTS",
-    "image": "img/product/pants/Pants8.jpg",
+    "image": "img/product/pants/pants8.jpg",
     "description": "Memphis-inspired shorts with scattered geometric shapes and organic forms on dark background. Abstract minimalism for the bold dresser."
   },
   {
@@ -221,7 +221,7 @@ const PRODUCTS = {
     "name": "Color Patch Vintage",
     "price": 72.00,
     "category": "SHORTS",
-    "image": "img/product/pants/Pants12.jpg",
+    "image": "img/product/pants/pants12.jpg",
     "description": "High-waisted vintage-wash denim shorts with colorful geometric pocket details in orange, green, and red. Retro meets modern patchwork style."
   },
   {
@@ -229,7 +229,7 @@ const PRODUCTS = {
     "name": "Abstract Swim Shorts",
     "price": 45.00,
     "category": "SWIM SHORTS",
-    "image": "img/product/pants/Pants14.jpg",
+    "image": "img/product/pants/pants14.jpg",
     "description": "Quick-dry swim shorts with bold abstract print featuring organic shapes and Memphis-style color blocking. Pool party ready with artistic flair."
   }
 ],
