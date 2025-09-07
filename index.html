@@ -9,6 +9,7 @@
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://unpkg.com/zdog@1/dist/zdog.dist.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 <header class="text-gray-700 body-font">
@@ -16,37 +17,39 @@
     <a href="#canvas" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-10 h-10 text-white p-2 bg-pink-500 rounded-full" viewBox="0 0 24 24">
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+        <rect x="10" y="5" width="4" height="14" rx="2" fill="currentColor"/>
+        <rect x="5" y="10" width="14" height="4" rx="2" fill="currentColor"/>
       </svg>
       <span class="ml-3 text-xl">x+o</span>
     </a>
-    <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+    <nav class="md:ml-auto md:mr-auto m-4 flex flex-wrap items-center text-base justify-center">
       <a href="#womens" class="mr-5">TOPS</a>
       <a href="#dresses" class="mr-5">DRESSES</a>
       <a href="#pants" class="mr-5">SHORTS</a>
       <a href="#accessories" class="mr-5">ACCESSORIES</a>
       <a href="#mens" class="mr-5">MEN'S</a>
-      <!-- <a class="mr-5">SALE</a> -->
-<!--       <a class="mr-5 hover:text-gray-900">Accessories</a> -->
     </nav>
-     <!-- Cart Button -->
-      <button id="cart-btn" class="relative inline-flex items-center bg-blue-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base">
-        CART
+      <div class="flex">
+      <!-- Cart Button -->
+        <button id="cart-btn" class="relative inline-flex items-center bg-blue-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base">
+          CART
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span id="cart-count" class="cart-badge hidden">0</span>
+        </button>
+            &emsp;
+      <!--About button-->
+    <a href="about.html">
+      <button class="inline-flex items-center bg-blue-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base md:mt-0">ABOUT
         <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-          <circle cx="9" cy="21" r="1"></circle>
-          <circle cx="20" cy="21" r="1"></circle>
-          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          <path d="M5 12h14M12 5l7 7-7 7"></path>
         </svg>
-        <span id="cart-count" class="cart-badge hidden">0</span>
       </button>
-          &emsp;
-    <!--About button-->
-  <a href="about.html">
-    <button class="inline-flex items-center bg-blue-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0">ABOUT
-      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-        <path d="M5 12h14M12 5l7 7-7 7"></path>
-      </svg>
-    </button>
-  </a>
+    </a>
+    </div>
   </div>
 </header>
   
@@ -60,7 +63,8 @@
       </h1>
       <h2 class="title-font sm:text-4xl text-3xl mb-4 font-medium">Bold & Bright Styles<br>for Your Daring Life
       </h2>
-      <p class="mb-8 leading-relaxed"><strong>x+o</strong> is all about big statements, bright colors, and funky patterns. We may be a little nostalgic but with a love of modern fashion. Expect eye catching clothing and accessories that'll turn your shine on.</p>
+      <p class="mb-2 leading-relaxed"><strong>x+o</strong> is all about big statements, bright colors, and funky patterns. </p>
+       <p class="mb-8 leading-relaxed"> We may be a little nostalgic but we love modern fashion. Expect eye catching clothing and accessories that'll turn your shine on.</p>
       <div class="flex justify-center">
         <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"><a href="#womens">WOMEN'S</a></button>
         <button class="ml-4 inline-flex text-gray-700 bg-gray-200 border-2 py-2 px-6 focus:outline-none hover:bg-gray-300 rounded text-lg"><a href="#mens">MEN'S</a></button>
@@ -76,13 +80,13 @@
 
 <!-- end hero / start e-commerce -->
  <div class="container px-5 py-24 mx-auto">
-<!-- /////// END OF SUMMER SALE BANNER/////// -->
-  <!-- END OF SUMMER SALE BANNER -->
+<!-- /////// SUMMER SALE BANNER/////// -->
+  <!-- SUMMER SALE BANNER -->
 <div class="flex flex-col md:flex-row min-h-32">
   <div class="flex-1 flex items-center justify-center relative p-6" style="background: var(--hotpink);">
     <div class="text-center text-white">
       <h3 class="text-2xl md:text-3xl font-bold mb-2">END OF SUMMER</h3>
-      <p style="border-top: 1px solid white; border-bottom: 1px solid white;" class="text-lg">CLEARANCE</p>
+      <p style="border-top: 1px solid white; border-bottom: 1px solid white;" class="text-lg">CLEARANCE SALE</p>
     </div>
   </div>
   <div class="flex-1 flex items-center justify-center relative p-6" style="background: var(--yellow);">
@@ -98,6 +102,8 @@
   </div>
 </div>
 <!-- END BANNER -->
+
+
   
 <!-- WOMEN'S TOPS /////////////// -->
 <section class="text-gray-700 body-font">
@@ -137,21 +143,35 @@
   </div>
 </section>
 
+<!-- // Recently Viewed // / //    -->
+ <section class="text-gray-700 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <h1 class="area txt-center">RECENTLY VIEWED</h1><br><br>
+    <div id="recently-viewed-container" class="flex flex-wrap -m-4">
+      <!-- Recently viewed items will be dynamically inserted here -->
+    </div>
+    <div id="recently-viewed-empty" class="text-center py-8 hidden">
+      <p class="text-gray-500 text-lg">No recently viewed items</p>
+      <p class="text-gray-400">Start browsing our collection to see items here!</p>
+    </div>
+  </div>
+</section>
+
 <!-- TESTIMONIALS /////////////// -->
 <section class="text-gray-700 body-font">
   <div class="container px-5 py-24 mx-auto">
     <h1 class="area txt-center">TESTIMONIALS</h1><br><br>
-    <div class="flex flex-wrap -m-4">
-      <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
+    <div class="testimonial-con">
+      <div class="testimonial mb-6">
         <div class="h-full text-center">
           <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="img/avatar/customer4.png">
-          <p class="leading-relaxed">I absolutly love my new clothing from x+o, whenever I go out people always comment on how my wardrobe has special surprises in it.</p>
+          <p class="leading-relaxed">I absolutly love my new clothing from x+o, whenever I go out people always comment on how my wardrobe has special surprises in it. I'm in love!</p>
           <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
           <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">DENNISE CAULD</h2>
           <p class="text-gray-500">Senior Product Designer</p>
         </div>
       </div>
-      <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
+      <div class="testimonial mb-6">
         <div class="h-full text-center">
           <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="img/avatar/customer5.png">
           <p class="leading-relaxed">I want to be bright and eye catching, as a designer I am expected to look the part. No one mistakes me for a realtor when I am working on a new home.</p>
@@ -160,10 +180,10 @@
           <p class="text-gray-500">Interior Designer</p>
         </div>
       </div>
-      <div class="lg:w-1/3 lg:mb-0 p-4">
+      <div class="testimonial mb-6">
         <div class="h-full text-center">
           <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="img/avatar/customer1.png">
-          <p class="leading-relaxed">I am constatly working parties and my clothing from x+o gives me a vibe that everyone connects with. When I play a gig my x+o brand shirts put a smile on people's faces.</p>
+          <p class="leading-relaxed">I'm constatly working parties, my clothing from x+o has a vibe that everyone connects with. When I play a gig my x+o brand shirts put a smile on people's faces.</p>
           <span class="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
           <h2 class="text-gray-900 font-medium title-font tracking-wider text-sm">NRY THAM</h2>
           <p class="text-gray-500">Disk Jockey</p>
@@ -174,12 +194,39 @@
 </section>
 
 <!-- FOOTER //////////////////// -->
+ <!-- Trust Badges -->
+<div class="flex items-center justify-center space-x-6 py-8 bg-gray-100">
+  <div class="flex items-center space-x-2">
+    <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+    </svg>
+    <span class="text-sm font-semibold">Secure Checkout</span>
+  </div>
+  
+  <div class="flex items-center space-x-2">
+    <svg class="w-6 h-6 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path>
+      <path d="M3 4a1 1 0 00-1 1v1a1 1 0 001 1h1l.94 4.12a2 2 0 001.96 1.88h8.2a2 2 0 001.96-1.88L17 7H5.72l-.22-1H3z"></path>
+    </svg>
+    <span class="text-sm font-semibold">Free Shipping $75+</span>
+  </div>
+  
+  <div class="flex items-center space-x-2">
+    <svg class="w-6 h-6 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"></path>
+    </svg>
+    <span class="text-sm font-semibold">30-Day Returns</span>
+  </div>
+</div>
+ 
 <footer class="text-gray-700 body-font">
   <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-no-wrap flex-wrap flex-col">
     <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
       <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-10 h-10 text-white p-2 bg-pink-500 rounded-full" viewBox="0 0 24 24">
           <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          <rect x="10" y="5" width="4" height="14" rx="2" fill="currentColor"/>
+          <rect x="5" y="10" width="14" height="4" rx="2" fill="currentColor"/>
         </svg>
         <span class="ml-3 text-xl">x+o</span>
       </a>
@@ -258,34 +305,33 @@
     </div>
   </div>
   <div class="baseline">
-    <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-      <p class="text-black-500 text-sm text-center sm:text-left">© 2020 x+o —
-        <a href="#" rel="noopener noreferrer" class="text-black-600 ml-1" target="_blank">@xpluso</a>
-      </p>
-      <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
-        <!-- <a class="text-black-500">
-          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-          </svg>
-        </a>
-        <a class="ml-3 text-black-500">
-          <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-          </svg>
-        </a> -->
-        <a href="https://www.instagram.com/d_l_i_g_h_t_n_i_n_g/" class="ml-3 text-black-500">
+    <div class="container">
+      <div>
+        <p class="text-black-500 text-sm text-center sm:text-left">© 1980's x+o —
+          <a href="#" rel="noopener noreferrer" class="text-black-600 ml-1" target="_blank">@xpluso</a>
+        </p>
+      </div>
+      <div>made with ﾒ𝘰✗૦ by 
+        <strong><a href="https://dlightning.org/"><i>Dlightning ⚡️</i></a></strong>
+      </div>
+      <div class="inline-flex gap-8">
+      <span>
+        <a href="https://www.instagram.com/d_l_i_g_h_t_n_i_n_g/" class="text-black-500">
           <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
             <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
             <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
           </svg>
         </a>
-        <a href="https://www.linkedin.com/company/dlightning/" class="ml-3 text-black-900">
+      </span>
+      <span>
+        <a href="https://www.linkedin.com/company/dlightning/" class="text-black-900">
           <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
             <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
             <circle cx="4" cy="4" r="2" stroke="none"></circle>
           </svg>
         </a>
       </span>
+      </div>
     </div>
   </div>
 </footer>
@@ -294,7 +340,7 @@
 
 <!-- Product Modal -->
 <div id="product-modal" class="fixed inset-0 modal-overlay z-50 hidden flex items-center justify-center p-4">
-  <div class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
+  <div class="cart-body bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
     <div class="p-6">
       <!-- Modal Header -->
       <div class="flex justify-between items-center mb-6">
@@ -326,8 +372,11 @@
 
           <!-- Size Selection -->
           <div>
-            <h4 class="font-semibold mb-3">Size</h4>
-            <div class="flex space-x-2">
+                      <div class="flex items-center space-x-2 mb-3">
+  <h4 class="font-semibold">Size</h4>
+  <button id="size-guide-btn" class="text-sm text-blue-500 hover:underline">Size Guide</button>
+</div>
+            <div class="flex">
               <button class="size-option px-4 py-2 text-sm font-semibold" data-size="XS">XS</button>
               <button class="size-option px-4 py-2 text-sm font-semibold" data-size="S">S</button>
               <button class="size-option px-4 py-2 text-sm font-semibold selected" data-size="M">M</button>
@@ -354,9 +403,41 @@
   </div>
 </div>
 
+<!-- Size Guide Modal -->
+<div id="size-guide-modal" class="fixed inset-0 modal-overlay z-50 hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-lg max-w-2xl w-full">
+    <div class="p-6">
+      <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold">Size Guide</h2>
+        <button id="close-size-guide" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+      </div>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b">
+              <th class="text-left py-2">Size</th>
+              <th class="text-left py-2">Chest (in)</th>
+              <th class="text-left py-2">Waist (in)</th>
+              <th class="text-left py-2">Hips (in)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b"><td class="py-2">XS</td><td>32-34</td><td>24-26</td><td>34-36</td></tr>
+            <tr class="border-b"><td class="py-2">S</td><td>34-36</td><td>26-28</td><td>36-38</td></tr>
+            <tr class="border-b"><td class="py-2">M</td><td>36-38</td><td>28-30</td><td>38-40</td></tr>
+            <tr class="border-b"><td class="py-2">L</td><td>38-40</td><td>30-32</td><td>40-42</td></tr>
+            <tr><td class="py-2">XL</td><td>40-42</td><td>32-34</td><td>42-44</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Cart Modal -->
-<div id="cart-modal" class="fixed inset-0 modal-overlay z-50 hidden flex items-center justify-center p-4">
-  <div class="bg-white rounded-lg max-w-2xl w-full max-h-screen overflow-y-auto">
+<div id="cart-modal" class="fixed inset-0 modal-overlay z-50 hidden flex items-center justify-center p-4 pt-8 pb-8">
+  <div class="cart-body bg-white rounded-lg max-w-2xl w-full overflow-y-auto mt-8 mb-8">
     <div class="p-6">
       <!-- Cart Header -->
       <div class="flex justify-between items-center mb-6">
@@ -391,9 +472,7 @@
 </div>
 
 <!-- Checkout modal -->
-
  <div id="checkout-modal" class="fixed inset-0 modal-overlay z-50 hidden flex items-center justify-center p-4">
-
   <div class="bg-white rounded-lg max-w-lg w-full">
     <div class="p-8 text-center">
       <!-- Modal Header -->
@@ -406,7 +485,6 @@
 
       <!-- Modal Content -->
       <div class="space-y-4 mb-6">
-
         <p class="text-lg text-gray-700">We love that you enjoyed browsing our bold Memphis-inspired collection!</p>
         <p class="text-gray-600">However, this store doesn't actually exist - it's a creative showcase from the minds at <a href="https://dlightning.org/"><strong style="color: var(--blue);">Dlightning</strong></a>.</p>
         <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mt-4">
@@ -415,13 +493,12 @@
       </div>
 
       <!-- Close Button -->
-      <button id="close-checkout" class="btn-primary px-8 py-3 text-lg">Got it!</button>
-      <a href="https://dlightning.org/"><button id="close-checkout" class="btn-primary px-8 py-3 text-lg">Visit Dlightning</button></a>
+      <button id="close-checkout" class="btn-secondary px-8 py-3 text-lg mb-2">Got it!</button>
+      <a href="https://dlightning.org/"><button id="close-checkout" class="btn-primary px-8 py-3 text-lg mt-2">Visit <i>Dlightning ⚡️</i></button></a>
     </div>
   </div>
 
-    <canvas id="lightning" class="lightning-canvas"></canvas>
-
+  <canvas id="lightning" class="lightning-canvas"></canvas>
 </div>
 
 <script>
@@ -430,12 +507,17 @@ class ShoppingCart {
   constructor() {
     this.items = [];
     this.init();
+    
+    // Make this cart globally accessible
+    window.globalCart = this;
   }
 
   init() {
     // Generate Memphis patterns for product thumbnails
     $('.memphis-pattern').each(function() {
-      MemphisGenerator.generate(this);
+      if (typeof MemphisGenerator !== 'undefined') {
+        MemphisGenerator.generate(this);
+      }
     });
 
     // Bind events
@@ -468,6 +550,19 @@ class ShoppingCart {
     $(document).on('click', '.size-option', (e) => {
       $('.size-option').removeClass('selected');
       $(e.target).addClass('selected');
+    });
+
+    // size guide
+    $('#size-guide-btn').on('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      $('#size-guide-modal').removeClass('hidden');
+    });
+
+    $('#close-size-guide, #size-guide-modal').on('click', (e) => {
+      if (e.target.id === 'close-size-guide' || e.target.id === 'size-guide-modal') {
+        $('#size-guide-modal').addClass('hidden');
+      }
     });
 
     // Quantity controls
@@ -504,8 +599,9 @@ class ShoppingCart {
         $('#cart-modal').addClass('hidden');
         $('#checkout-modal').removeClass('hidden');
       }
+      if (typeof initLightningCanvas === 'function') {
         initLightningCanvas();
-
+      }
     });
 
     // Close checkout modal
@@ -524,56 +620,95 @@ class ShoppingCart {
       this.removeFromCart(index);
     });
   }
-  
 
   openProductModal(product) {
     $('#modal-category').text(product.category);
     $('#modal-name').text(product.name);
-    $('#modal-price').text(`$${product.price.toFixed(2)}`);
+    
+    // Updated pricing display for modal
+    if (product.salePrice) {
+      $('#modal-price').html(`
+        <span class="text-gray-500 line-through text-lg">$${product.price.toFixed(2)}</span>
+        <span class="text-green-600 font-bold text-xl ml-2">$${product.salePrice.toFixed(2)}</span>
+      `);
+    } else {
+      $('#modal-price').text(`$${product.price.toFixed(2)}`);
+    }
+    
     $('#quantity').text('1');
     $('.size-option').removeClass('selected');
     $('.size-option[data-size="M"]').addClass('selected');
 
-    // Store current product data
     $('#product-modal').data('product', product);
-
-    // Use actual product description instead of placeholder
     $('#modal-description').text(product.description || 'Express your daring style with this bold Memphis-inspired piece. Perfect for making a statement and turning heads wherever you go.');
-
-      $('#modal-image').attr('src', product.image).removeClass('hidden');
-      $('#modal-canvas').addClass('hidden');
-    
+    $('#modal-image').attr('src', product.image).removeClass('hidden');
+    $('#modal-canvas').addClass('hidden');
     $('#product-modal').removeClass('hidden');
   }
 
+
+  // Method for quick add to cart (called by QuickActionsHandler)
+  quickAddToCart(product) {
+    const currentPrice = product.salePrice || product.price; // Use sale price if available
+    
+    const cartItem = {
+      id: Date.now(),
+      productId: product.id,
+      name: product.name,
+      price: currentPrice, // Use current price (sale or regular)
+      originalPrice: product.price, // Store original price for reference
+      size: 'M',
+      quantity: 1,
+      image: product.image,
+      onSale: !!product.salePrice // Track if item was on sale
+    };
+
+    this.items.push(cartItem);
+    this.updateCartDisplay();
+    
+    // Show success message with sale info if applicable
+    const message = product.salePrice 
+      ? `${product.name} added to cart! (Sale price: $${product.salePrice.toFixed(2)})`
+      : `${product.name} added to cart!`;
+      window.toastManager.success(message, 3000);
+  }
+
+  // Method for modal add to cart
   addToCart() {
     const product = $('#product-modal').data('product');
     const size = $('.size-option.selected').data('size');
     const quantity = parseInt($('#quantity').text());
+    const currentPrice = product.salePrice || product.price;
 
     const cartItem = {
-      id: Date.now(), // Simple unique ID
+      id: Date.now(),
       productId: product.id,
       name: product.name,
-      price: product.price,
+      price: currentPrice,
+      originalPrice: product.price,
       size: size,
       quantity: quantity,
       image: product.image,
-      type: product.type
+      onSale: !!product.salePrice
     };
 
     this.items.push(cartItem);
     this.updateCartDisplay();
     $('#product-modal').addClass('hidden');
 
-    // Show success message (optional)
-    this.showMessage('Added to cart!');
+    // Show success message
+    const message = product.salePrice 
+      ? `Added to cart! (Sale price: $${product.salePrice.toFixed(2)})`
+      : 'Added to cart!';
+    window.toastManager.success(message, 3000);
+    
   }
 
   removeFromCart(index) {
     this.items.splice(index, 1);
     this.updateCartDisplay();
     this.updateCartModal();
+    window.toastManager.info('Item removed from cart', 2000);
   }
 
   updateCartDisplay() {
@@ -605,15 +740,19 @@ class ShoppingCart {
     $cartEmpty.addClass('hidden');
     $cartSummary.removeClass('hidden');
 
-    // Render cart items
+    // Render cart items with sale indicators
     $cartItems.html(this.items.map((item, index) => `
       <div class="cart-item flex items-center space-x-4">
-        <div class="w-16 h-16 bg-gray-200 rounded overflow-hidden flex-shrink-0">
-           <img src="${item.image}" class="w-full h-full object-cover" alt="${item.name}"> 
+        <div class="w-16 h-16 bg-gray-200 rounded overflow-hidden flex-shrink-0 relative">
+          ${item.onSale ? '<div class="absolute top-0 left-0 bg-red-500 text-white text-xs px-1 rounded-br">SALE</div>' : ''}
+          <img src="${item.image}" class="w-full h-full object-cover" alt="${item.name}"> 
         </div>
         <div class="flex-grow">
           <h4 class="font-semibold">${item.name}</h4>
           <p class="text-sm text-gray-500">Size: ${item.size} • Qty: ${item.quantity}</p>
+          ${item.onSale && item.originalPrice !== item.price ? 
+            `<p class="text-xs text-gray-500">Reg: <span class="line-through">$${item.originalPrice.toFixed(2)}</span></p>` : ''
+          }
           <p class="font-semibold" style="color: var(--blue);">$${(item.price * item.quantity).toFixed(2)}</p>
         </div>
         <button class="remove-item text-red-500 hover:text-red-700" data-index="${index}">
@@ -624,48 +763,327 @@ class ShoppingCart {
       </div>
     `).join(''));
 
-    // Update total
+    // Update total with potential savings display
     const total = this.items.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    $('#cart-total').text(`$${total.toFixed(2)}`);
+    const originalTotal = this.items.reduce((sum, item) => sum + (item.originalPrice * item.quantity), 0);
+    const savings = originalTotal - total;
+
+    let totalHtml = `$${total.toFixed(2)}`;
+    if (savings > 0) {
+      totalHtml = `
+        <div>
+          <div class="text-sm text-gray-500 line-through">$${originalTotal.toFixed(2)}</div>
+          <div>$${total.toFixed(2)}</div>
+          <div class="text-xs text-green-600">You saved $${savings.toFixed(2)}!</div>
+        </div>
+      `;
+    }
+
+    $('#cart-total').html(totalHtml);
   }
 
-  showMessage(message) {
-    // Simple toast notification
-    const $toast = $(`
-      <div class="fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded shadow-lg z-50">
-        ${message}
-      </div>
-    `);
-    
-    $('body').append($toast);
-    setTimeout(() => {
-      $toast.fadeOut(() => $toast.remove());
-    }, 2000);
+  showMessage(message, type = 'success') {
+  window.toastManager.show(message, type, 3000);
+  }
+
+  // Method to get all cart items
+  getCartItems() {
+    return [...this.items];
+  }
+
+  // Method to clear cart
+  clearCart() {
+    this.items = [];
+    this.updateCartDisplay();
   }
 }
 
-// Initialize the shopping cart
+class RecentlyViewed {
+  constructor() {
+    this.maxItems = 4; // Show max 4 recently viewed items
+    this.recentItems = this.loadFromStorage();
+    this.init();
+  }
+
+  init() {
+    this.updateDisplay();
+    this.bindEvents();
+  }
+
+  bindEvents() {
+    // Override the existing product modal opening to track views
+    const originalOpenProductModal = window.shoppingCart ? window.shoppingCart.openProductModal : null;
+    
+    // Listen for product modal opens
+    $(document).on('click', '.product-item', (e) => {
+      const productData = JSON.parse($(e.currentTarget).attr('data-product'));
+      this.addToRecentlyViewed(productData);
+    });
+  }
+
+  addToRecentlyViewed(product) {
+    // Remove if already exists to move to front
+    this.recentItems = this.recentItems.filter(item => item.id !== product.id);
+    
+    // Add to beginning - PRESERVE ALL PRODUCT PROPERTIES INCLUDING salePrice
+    this.recentItems.unshift({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      salePrice: product.salePrice, // This was missing!
+      category: product.category,
+      image: product.image,
+      description: product.description,
+      viewedAt: new Date().toISOString()
+    });
+
+    // Keep only max items
+    if (this.recentItems.length > this.maxItems) {
+      this.recentItems = this.recentItems.slice(0, this.maxItems);
+    }
+
+    this.saveToStorage();
+    this.updateDisplay();
+  }
+
+  updateDisplay() {
+    const $container = $('#recently-viewed-container');
+    const $empty = $('#recently-viewed-empty');
+
+    if (this.recentItems.length === 0) {
+      $container.empty();
+      $empty.removeClass('hidden');
+      return;
+    }
+
+    $empty.addClass('hidden');
+    
+    const itemsHtml = this.recentItems.map(item => {
+      // Use the same pricing logic as ProductRenderer
+      let pricingHtml;
+      if (item.salePrice) {
+        const savings = item.price - item.salePrice;
+        const savingsPercent = Math.round((savings / item.price) * 100);
+        pricingHtml = `
+          <div class="mt-1">
+            <span class="text-blue-600 font-bold">$${item.salePrice.toFixed(2)}</span>
+            <span class="text-gray-500 line-through text-sm">$${item.price.toFixed(2)}</span>
+          </div>
+        `;
+      } else {
+        pricingHtml = `<p class="mt-1">$${item.price.toFixed(2)}</p>`;
+      }
+
+      return `
+        <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
+          <div class="product-card-wrapper relative">
+            ${item.salePrice ? '<div class="absolute mt-2 ml-2 bg-red-500 text-white px-2 py-1 text-xs font-bold rounded z-10">SALE</div>' : ''}
+            <a class="block relative h-48 rounded overflow-hidden product-item cursor-pointer" 
+              data-product='${JSON.stringify(item)}'>
+              <img alt="recently viewed" 
+                  loading="lazy"
+                  class="object-cover object-center w-full h-full block" 
+                  src="${item.image}">
+              
+              <!-- Quick Actions -->
+              <div class="quick-actions top-2 right-2 flex space-y-2 opacity-0 transition-opacity duration-300">
+                <button class="quick-add-btn w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-pink-500 hover:text-white transition-all duration-200" 
+                        data-product='${JSON.stringify(item)}' 
+                        title="Add to Cart">
+                  <i class="fa-solid fa-cart-plus"></i>
+                </button>
+                
+                <button class="save-btn w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-blue-500 hover:text-white transition-all duration-200" 
+                        data-product='${JSON.stringify(item)}' 
+                        data-product-id="${item.id}"
+                        title="Save to Wishlist">
+                  <i class="fa-regular fa-heart"></i>
+                </button>
+              </div>
+            </a>
+            
+            <div class="mt-4">
+              <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">${item.category}</h3>
+              <h2 class="text-gray-900 title-font text-lg font-medium">
+                <a href="#" class="product-item cursor-pointer hover:text-pink-500 transition-colors duration-200" 
+                   data-product='${JSON.stringify(item)}'>
+                  ${item.name}
+                </a>
+              </h2>
+              ${pricingHtml}
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    $container.html(itemsHtml);
+    
+    // Update saved button states after rendering
+    if (window.quickActions) {
+      window.quickActions.updateSavedButtonStates();
+    }
+  }
+
+  loadFromStorage() {
+    try {
+      const stored = localStorage.getItem('recentlyViewed');
+      return stored ? JSON.parse(stored) : [];
+    } catch (e) {
+      console.warn('Could not load recently viewed items:', e);
+      return [];
+    }
+  }
+
+  saveToStorage() {
+    try {
+      localStorage.setItem('recentlyViewed', JSON.stringify(this.recentItems));
+    } catch (e) {
+      console.warn('Could not save recently viewed items:', e);
+    }
+  }
+
+  clearRecentlyViewed() {
+    this.recentItems = [];
+    this.saveToStorage();
+    this.updateDisplay();
+  }
+
+  getRecentlyViewed() {
+    return [...this.recentItems];
+  }
+}
+
+// Unified Toast Notification System
+class ToastManager {
+  constructor() {
+    this.toastContainer = null;
+    this.init();
+  }
+
+  init() {
+    // Create toast container if it doesn't exist
+    if (!document.getElementById('toast-container')) {
+      this.toastContainer = document.createElement('div');
+      this.toastContainer.id = 'toast-container';
+      this.toastContainer.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+        pointer-events: none;
+      `;
+      document.body.appendChild(this.toastContainer);
+    } else {
+      this.toastContainer = document.getElementById('toast-container');
+    }
+  }
+
+  show(message, type = 'success', duration = 3000) {
+    const toast = document.createElement('div');
+    toast.className = 'toast-message';
+    
+    // Define colors for different types
+    const colors = {
+      success: '#10B981', // green
+      error: '#EF4444',   // red
+      info: '#3B82F6',    // blue
+      warning: '#F59E0B', // yellow
+      heart: '#EC4899'    // pink
+    };
+
+    const bgColor = colors[type] || colors.success;
+    
+    toast.style.cssText = `
+      background-color: ${bgColor};
+      color: white;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transform: translateX(100%);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      opacity: 0;
+      pointer-events: auto;
+      font-size: 14px;
+      font-weight: 500;
+      max-width: 350px;
+      word-wrap: break-word;
+    `;
+    
+    toast.textContent = message;
+    this.toastContainer.appendChild(toast);
+
+    // Trigger animation
+    requestAnimationFrame(() => {
+      toast.style.transform = 'translateX(0)';
+      toast.style.opacity = '1';
+    });
+
+    // Auto remove
+    setTimeout(() => {
+      this.removeToast(toast);
+    }, duration);
+
+    // Click to dismiss
+    toast.addEventListener('click', () => {
+      this.removeToast(toast);
+    });
+
+    return toast;
+  }
+
+  removeToast(toast) {
+    if (!toast || !toast.parentNode) return;
+    
+    toast.style.transform = 'translateX(100%)';
+    toast.style.opacity = '0';
+    
+    setTimeout(() => {
+      if (toast.parentNode) {
+        toast.parentNode.removeChild(toast);
+      }
+    }, 300);
+  }
+
+  success(message, duration) {
+    return this.show(message, 'success', duration);
+  }
+
+  error(message, duration) {
+    return this.show(message, 'error', duration);
+  }
+
+  info(message, duration) {
+    return this.show(message, 'info', duration);
+  }
+
+  warning(message, duration) {
+    return this.show(message, 'warning', duration);
+  }
+
+  heart(message, duration) {
+    return this.show(message, 'heart', duration);
+  }
+}
+
+// Initialize the recently viewed functionality
 $(document).ready(() => {
-  new ShoppingCart();
+  window.recentlyViewed = new RecentlyViewed();
+  window.toastManager = new ToastManager();
 });
 
-// Usage example:
+// Initialize the shopping cart
+// Updated initialization in index.html
 $(document).ready(function() {
   // Initialize the product renderer
   const productRenderer = new ProductRenderer();
-  
-  // Example of adding a new product
-  /*
-  productRenderer.addProduct('womens_tops', {
-    id: 999,
-    name: "New Bold Design",
-    price: 55.00,
-    category: "TOPS",
-    image: "img/product/shirt/new-shirt.jpg",
-    description: "Fresh Memphis-inspired design for the modern woman."
-  });
-  */
+  // Initialize the unified shopping cart
+  const cart = new ShoppingCart();
+  // Initialize quick actions (now just handles wishlist/save functionality)
+  window.quickActions = new QuickActionsHandler();
 });
+
 </script>
 <script  src="js/script.js"></script>
 <script  src="js/products.js"></script>
