@@ -670,6 +670,35 @@ div > .product-card-wrapper:nth-child(3n):hover::after {
   align-items: center;
   gap: 14px;
   transition: all 0.3s ease;
+  position: relative;
+}
+
+.bolt-img {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  z-index: -1;
+}
+
+.bolt-img:nth-child(1) {
+  top: -124px;
+  left: -202px;
+}
+
+.bolt-img:nth-child(2) {
+  bottom: -164px;
+  left: 222px;
+}
+
+.bolt-img:nth-child(3) {
+  bottom: 64px;
+  right: -182px;
+}
+
+.bolt-img:nth-child(4) {
+  top: -188px;
+  left: 392px;
+  transform: rotate(45deg);
 }
 
 @media (max-width: 468px) {

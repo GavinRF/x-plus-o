@@ -191,8 +191,8 @@ const PRODUCTS = {
   {
     "id": 21,
     "name": "Pattern Mix Madness",
-    "price": 58.00,
-    "salePrice": 41.70,
+    "price": 158.00,
+    "salePrice": 141.70,
     "category": "SHORTS",
     "image": "img/product/pants/pants3.jpg",
     "description": "Collection of color-blocked shorts featuring stripes, solids, and mixed patterns. Each pair is a unique work of wearable art in bright Memphis colors."
