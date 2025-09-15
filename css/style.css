@@ -21,7 +21,17 @@
 html{
   font-family: Now-Light !important;
   scroll-behavior: smooth;
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
 }
+
+body{
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+
+}
+
+
 
 :root {
 --main-bg: #cdcdcd;
@@ -32,6 +42,8 @@ html{
 --yellow: #ffdb00;
 --black: #171a1e;
 }
+
+
 
 a{
   cursor: pointer;
@@ -50,15 +62,135 @@ h1{
 
 header{
   background-color: var(--pink);
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   z-index: 909909;
+  width: 100vw;
 }
 
 button{
   line-height: normal !important;
   padding: 12px 20px 8px 20px !important;
 }
+
+.hamburger .line{
+  width: 40px;
+  height: 5px;
+  background-color: var(--black);
+  display: block;
+  margin: 6px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: none;
+}
+
+.hamburger:hover{
+  cursor: pointer;
+}
+
+#hamburger-9{
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#hamburger-9.is-active{
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#hamburger-9:before{
+  content: "";
+  position: absolute;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 49px;
+  height: 49px;
+  border: 5px solid transparent;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+  border-radius: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#hamburger-9.is-active:before{
+  border: 5px solid var(--black);
+}
+
+#hamburger-9.is-active .line{
+  width: 30px;
+}
+
+#hamburger-9.is-active .line:nth-child(2){
+  opacity: 0;
+}
+
+#hamburger-9.is-active .line:nth-child(1){
+  -webkit-transform: translateY(11px);
+  -ms-transform: translateY(11px);
+  -o-transform: translateY(11px);
+  transform: translateY(11px);
+}
+
+#hamburger-9.is-active .line:nth-child(3){
+  -webkit-transform: translateY(-11px) rotate(90deg);
+  -ms-transform: translateY(-11px) rotate(90deg);
+  -o-transform: translateY(-11px) rotate(90deg);
+  transform: translateY(-11px) rotate(90deg);
+}
+
+#overlay-menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100vw;
+  height: 100%;
+  background: #fe7cbbe0;
+  z-index: 100;
+  display: none;
+}
+
+#overlay-menu.view{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#overlay-menu a{
+  font-size: larger;
+  font-weight: 700;
+}
+
+
+@media (max-width: 468px) {
+  .hamburger .line{
+    display: block;
+  }
+  nav{
+    display: none !important;
+  }
+
+  #about-btn{
+    display: none !important;
+  }
+
+  #cart-btn .cart-txt{
+    display: none !important;
+  }
+}
+
+
 
 .main{
   /* text-shadow: -4px -2px 6px #fdc7df; */
@@ -81,11 +213,13 @@ body{
 }
 
 #canvas{
-  width:100vw;
+  width: 100vw;
   height: 40vh;
   cursor: grab;
   background: white;
+  max-width: 100vw;
 /*   background: gray; */
+margin-top: 60px;
 }
 
 #canvas:active{
@@ -96,6 +230,7 @@ body{
   position: relative;
   width: 455px;
   height: 455px;
+  max-width: 100vw;
   margin: -460px 0 -100px auto;
   cursor: grab;
   background: transparent;
@@ -104,6 +239,7 @@ body{
 #snake{
   position: relative;
   width: 555px;
+  max-width: 100vw;
   height: 555px;
   margin: -340px 100px -240px auto;
   cursor: grab;
@@ -113,6 +249,7 @@ body{
 @media (max-width: 468px) {
   #snake {
     width: calc(100% + 48px);
+    max-width: 100vw;
     height: 364px;
     margin: 0px 0px -160px -24px;
   }
@@ -121,6 +258,7 @@ body{
 #cluster {
   position: relative;
   width: 885px;
+  max-width: 100vw;
   height: 655px;
   margin: -410px 100px -300px auto;
   cursor: grab;
@@ -129,9 +267,9 @@ body{
 
 @media (max-width: 468px) {
   #cluster {
-    width: 444px;
+    width: 344px;
     height: 340px;
-    margin: 0px 0px -160px 0;
+    margin: 0px 0px -220px 0;
   }
 }
 
@@ -149,9 +287,10 @@ body{
 #cube{
   position: absolute;
   width: 655px;
+  max-width: 100vw;
   height: 645px;
   right:0px;
-  top: 1875px;
+  top: 2175px;
   cursor: grab;
   background: transparent;
   z-index: -2;
@@ -215,6 +354,16 @@ footer{
       max-width: 100vw;
     }
 
+  .modal-image-container {
+    max-height: 60vh;
+    height: 100%;
+  }
+
+  .modal-image {
+    max-height: 60vh;
+    height: 100%;
+  }
+
     .fa-regular.fa-heart {
       color: var(--blue);
     }
@@ -231,9 +380,11 @@ footer{
 
     .memphis-pattern {
       width: 100%;
+      max-width: 100vw;
       height: 300px;
       background: white;
       border: 2px solid var(--black);
+      max-width: 100vw;
     }
 
     .cart-badge {
@@ -389,6 +540,21 @@ footer{
 
 #mens_container > div:nth-child(3n) .product-card-wrapper:hover {
   transform: translateY(-7px) rotate(-1.2deg);
+}
+
+#extra-off{
+  background-image: url(../img/resource/laid-back.png);
+  background-repeat: no-repeat;
+  background-position: 0px -180px;
+  background-size: cover;
+  position: relative;
+  box-shadow: 4px 6px 0px var(--black), inset 2px 1px 0px #ffffffb8;
+}
+
+@media (max-width: 468px) {
+  #extra-off{
+    background-position: 0px 0px;
+  }
 }
 
 /* RECENTLY VIEWED variations */
@@ -666,7 +832,8 @@ div > .product-card-wrapper:nth-child(3n):hover::after {
 
 .testimonial-con {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
   gap: 14px;
   transition: all 0.3s ease;
@@ -676,28 +843,29 @@ div > .product-card-wrapper:nth-child(3n):hover::after {
 .bolt-img {
   position: absolute;
   width: 300px;
+  max-width: 100vw;
   height: 300px;
   z-index: -1;
 }
 
 .bolt-img:nth-child(1) {
-  top: -124px;
-  left: -202px;
+  top: -50px;
+  left: -2%;
 }
 
 .bolt-img:nth-child(2) {
   bottom: -164px;
-  left: 222px;
+  left: 22%;
 }
 
 .bolt-img:nth-child(3) {
   bottom: 64px;
-  right: -182px;
+  right: -8%;
 }
 
 .bolt-img:nth-child(4) {
   top: -188px;
-  left: 392px;
+  left: 39%;
   transform: rotate(45deg);
 }
 
@@ -713,7 +881,7 @@ div > .product-card-wrapper:nth-child(3n):hover::after {
   border-radius: 12px;
   box-shadow: 0 4px 12px var(--pink);
   transition: all 0.3s ease;
-  flex-basis: 33%;
+  flex-basis: 30%;
   min-width: 280px;
 }
 
@@ -900,3 +1068,35 @@ div > .product-card-wrapper:nth-child(3n):hover::after {
 .cart-body {
   max-height: 80vh;
 }
+
+        .floating-shape {
+            position: absolute;
+            z-index: 1;
+        }
+
+        .shape-1 {
+            top: 20%;
+            left: 15%;
+            width: 20px;
+            height: 20px;
+            background: var(--pink);
+            border-radius: 50%;
+        }
+
+        .shape-2 {
+            top: 70%;
+            left: 25%;
+            width: 15px;
+            height: 15px;
+            background: var(--blue);
+            transform: rotate(45deg);
+        }
+
+        .shape-3 {
+            top: 12%;
+            left: 20%;
+            width: 25px;
+            height: 25px;
+            background: var(--yellow);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }

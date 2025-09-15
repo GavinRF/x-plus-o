@@ -1,4 +1,3 @@
-// products.js - Product data structure
 const PRODUCTS = {
   womens_tops: [
     {
@@ -315,7 +314,7 @@ const PRODUCTS = {
     "salePrice": 59.00,
     "category": "SUNGLASSES",
     "image": "img/product/accessories/accessories6.jpg",
-    "description": "Unique round frames in soft pink with geometric pattern temples and blue accent details. Handcrafted design that's part art piece, part eyewear."
+    "description": "Unique round frames in soft pink with geometric pattern temples and blue accent details. Handcrafted design that\'s part art piece, part eyewear."
   },
   {
     "id": 35,
@@ -324,7 +323,7 @@ const PRODUCTS = {
     "salePrice": 52.00,
     "category": "SUNGLASSES",
     "image": "img/product/accessories/accessories7.jpg",
-    "description": "Round yellow frames with polka dot temples and geometric color blocking. A tribute to both Memphis design and Mondrian's color theory in wearable form."
+    "description": "Round yellow frames with polka dot temples and geometric color blocking. A tribute to both Memphis design and Mondrian\'s color theory in wearable form."
   },
   {
     "id": 36,
@@ -523,6 +522,7 @@ class ProductRenderer {
 generateProductHtml(product) {
     const pricingHtml = this.generatePricingHtml(product);
     const isFeatured = Math.random() > 0.8; 
+    
   return `
     <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
       <div class="product-card-wrapper relative ${isFeatured ? 'featured-product' : ''}">
