@@ -189,7 +189,7 @@ new Zdog.Shape({
   scale: 5.25,
   stroke: 8,
   color: hotpink,
-  translate: { x: -46, y: 0, z: 0 },
+  translate: { x: -44, y: 0, z: 0 },
   rotate: { z: TAU/8 }, 
 });
 
@@ -227,7 +227,7 @@ new Zdog.Shape({
 new Zdog.Ellipse({
   addTo: illo,
   diameter: 26,
-  translate: { x: 50, y: 0, z: 0 },
+  translate: { x: 47, y: 0, z: 0 },
   stroke: 10,
   color: green,
 });

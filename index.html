@@ -155,10 +155,10 @@
 <canvas id="canvas" class="zdog-canvas"></canvas>
 
 <!-- hero -->
-<section class="text-gray-700 body-font">
+<section class="text-gray-700 body-font" style="position: relative;">
   <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
     <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-      <h1 class="main title-font sm:text-4xl text-3xl mb-4 font-medium">NEON DREAMS
+      <h1 data-message="NEON DREAMS" class="shapes-effect main title-font sm:text-4xl text-3xl mb-4 font-medium">NEON DREAMS
       </h1>
       <h2 class="title-font sm:text-4xl text-3xl mb-4 font-medium">Bold & Bright Styles<br>for Your Daring Life
       </h2>
@@ -194,8 +194,12 @@
       <div class="text-lg font-semibold">Off Everything</div>
     </div>
   </div>
-  <div class="flex-1 flex items-center justify-center relative p-6" style="background: var(--blue);">
-    <a href="#womens"><button class="bg-white px-6 py-3 rounded-full font-bold text-lg hover:shadow-lg transition-all duration-300" style="color: var(--hotpink);">
+  <div class="flex-1 flex items-center justify-center relative p-6" style="background: var(--blue);" style="position: relative;">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-shape shape-4"></div>
+    <a href="#womens"><button class="bg-white px-6 py-3 rounded-full font-bold text-lg hover:shadow-lg transition-all duration-300" style="color: var(--hotpink); transform:rotate(6deg); margin-left: -12px;">
       SHOP SALE
     </button></a>
   </div>
@@ -206,19 +210,19 @@
   
 <!-- WOMEN'S TOPS /////////////// -->
 <section class="text-gray-700 body-font">
-    <h1 id="womens" class="area">WOMEN'S TOPS</h1>
+    <h1 id="womens" class="shapes-effect area">WOMEN'S TOPS</h1>
     <div class="flex flex-wrap -m-4" id="womens_tops"></div>
 
     <br><br> <br><br> 
 
     <!-- /////// Dresses /////// -->
-    <h1 id="dresses" class="area">DRESSES</h1>
+    <h1 id="dresses" class="shapes-effect area">DRESSES</h1>
 <div class="flex flex-wrap -m-4" id="dresses_container"></div>
 
     <br><br>  <br><br> 
 
     <!-- /////// Pants /////// -->
-      <h1 id="pants" class="area">PANTS & SHORTS</h1>
+      <h1 id="pants" class="shapes-effect area">PANTS & SHORTS</h1>
     <div class="flex flex-wrap -m-4" id="pants_container"></div>
 
     <canvas id="snake" class="snake-canvas"></canvas>
@@ -226,7 +230,7 @@
       <br><br> <br><br> 
       
     <!-- /////// Accessories /////// -->
-      <h1 id="accessories" class="area">ACCESSORIES</h1>
+      <h1 id="accessories" class="shapes-effect area">ACCESSORIES</h1>
     <div class="flex flex-wrap -m-4" id="accessories_container"></div>
 
     <canvas id="cluster" class="cluster-canvas"></canvas>
@@ -236,7 +240,7 @@
 
       <!-- /////// MENS /////// -->
     <br><br> <br><br> 
-    <h1 id="mens" class="area">MEN'S SHORT SLEEVES</h1>
+    <h1 id="mens" class="shapes-effect area">MEN'S SHORT SLEEVES</h1>
     <div class="flex flex-wrap -m-4" id="mens_container"></div>
 
   </div>
@@ -244,12 +248,9 @@
 
 <!-- // Extra 5% Off  -->
 <section class="text-gray-700 body-font">
-  <div class="container mx-auto" id="extra-off">
-        <div class="floating-shape shape-1"></div>
-        <div class="floating-shape shape-2"></div>
-        <div class="floating-shape shape-3"></div>
-    <div class="row col-lg-12 col-md-12 mx-auto p-6" style="background: linear-gradient(135deg, var(--hotpink) 0%, transparent 100%);">
-    <h2 class="area" style="font-weight: 900; text-shadow: 1px 1px 0 var(--black), 4px 4px 0 var(--hotpink);">Extra 15% Off</h2>
+  <div class="container mx-auto" id="extra-off" style="position: relative;">
+    <div class="row col-lg-12 col-md-12 mx-auto p-6" style="background: linear-gradient(35deg, var(--hotpink) 0%, transparent 100%);">
+    <h2 class="shapes-effect area" style="font-weight: 900; text-shadow: 1px 1px 0 var(--black), 4px 4px 0 var(--hotpink);">Extra 15% Off</h2>
                 <p class="text-lg text-white font-semibold mb-6 max-w-2xl" style="text-shadow: 1px 1px 2px rgba(0,0,0,0.5); max-width: 222px;">
                 When you buy a new item, get a 15% discount on your next purchase.
             </p>
@@ -261,7 +262,7 @@
 <!-- // Recently Viewed // / //    -->
  <section class="text-gray-700 body-font">
   <div class="container px-5 py-24 mx-auto">
-    <h1 class="area txt-center">RECENTLY VIEWED</h1><br><br>
+    <h1 class="shapes-effect area txt-center">RECENTLY VIEWED</h1><br><br>
     <div id="recently-viewed-container" class="flex flex-wrap -m-4">
       <!-- Recently viewed items will be dynamically inserted here -->
     </div>
@@ -275,7 +276,7 @@
 <!-- TESTIMONIALS /////////////// -->
 <section class="text-gray-700 body-font">
   <div class="container px-5 py-24 mx-auto">
-    <h1 class="area txt-center">TESTIMONIALS</h1><br><br>
+    <h1 class="shapes-effect area txt-center">TESTIMONIALS</h1><br><br>
     <div class="testimonial-con">
       <img class="bolt-img" src="img/resource/bolt-p1.png" alt="bolt illustration" aria-hidden="true">
   <img class="bolt-img" src="img/resource/bolt-p2.png" alt="bolt illustration" aria-hidden="true">
@@ -433,7 +434,7 @@
       <div style="text-align: center;">made with ﾒ𝘰✗૦ by 
         <strong><a href="https://dlightning.org/"><i>Dlightning ⚡️</i></a></strong>
       </div>
-      <div class="inline-flex gap-8">
+      <div class="inline-flex gap-6">
       <span>
         <a href="https://www.instagram.com/d_l_i_g_h_t_n_i_n_g/" class="text-black-500">
           <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
@@ -459,7 +460,7 @@
 
 <!-- Product Modal -->
 <div id="product-modal" class="fixed inset-0 modal-overlay z-50 hidden flex items-center justify-center p-4">
-  <div class="cart-body bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
+  <div class="cart-body bg-white rounded-lg max-w-4xl w-full overflow-y-auto">
     <div class="p-6">
       <!-- Modal Header -->
       <div class="flex justify-between items-center mb-6">
@@ -1021,7 +1022,7 @@ class RecentlyViewed {
               </div>
             </a>
             
-            <div class="mt-4">
+            <div class="mt-4 card-body">
               <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">${item.category}</h3>
               <h2 class="text-gray-900 title-font text-lg font-medium">
                 <a href="#" class="product-item cursor-pointer hover:text-pink-500 transition-colors duration-200" 
@@ -1217,6 +1218,45 @@ $(document).ready(function(){
     $(".hamburger").removeClass("is-active");
   });
 });
+
+        // Random Memphis shapes that appear on some hovers
+        function createRandomShape() {
+            const shapes = ['circle', 'square', 'triangle'];
+            const colors = ['var(--yellow)', 'var(--green)', 'var(--blue)', 'var(--hotpink)'];
+            
+            const shape = document.createElement('div');
+            shape.style.position = 'absolute';
+            shape.style.width = '15px';
+            shape.style.height = '15px';
+            shape.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            shape.style.top = Math.random() * 100 + '%';
+            shape.style.left = Math.random() * 100 + '%';
+            shape.style.borderRadius = shapes[Math.floor(Math.random() * shapes.length)] === 'circle' ? '50%' : '0';
+            shape.style.opacity = '0.7';
+            shape.style.pointerEvents = 'none';
+            shape.style.zIndex = '-1';
+            
+            return shape;
+        }
+
+        // Add floating shapes to some effects
+        document.querySelectorAll('.shapes-effect, .pattern-effect').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                for (let i = 0; i < 3; i++) {
+                    setTimeout(() => {
+                        const shape = createRandomShape();
+                        this.appendChild(shape);
+                        
+                        // Remove shape after animation
+                        setTimeout(() => {
+                            if (shape.parentNode) {
+                                shape.parentNode.removeChild(shape);
+                            }
+                        }, 1000);
+                    }, i * 100);
+                }
+            });
+        });
 
 
 </script>

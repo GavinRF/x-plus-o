@@ -58,6 +58,18 @@ h1{
   font-family: Delizioso;
   font-size: 6.5em !important;
   color: var(--hotpink);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-shadow: 1px 1px 0 var(--black), 2px 2px 0 var(--black), 3px 3px 0 var(--hotpink);
+  letter-spacing: .02em;
+}
+
+h1:hover{
+    letter-spacing: 2px;
+}
+
+h2{
+  position: relative;
 }
 
 header{
@@ -472,6 +484,7 @@ footer{
 .product-card-wrapper:hover {
   transform: translateY(-6px) rotate(0.5deg);
   outline: 8px solid white;
+  outline-offset: -1px;
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 4px 12px var(--blue);
@@ -548,12 +561,17 @@ footer{
   background-position: 0px -180px;
   background-size: cover;
   position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#extra-off:hover{
+  transform: scale(1.05);
   box-shadow: 4px 6px 0px var(--black), inset 2px 1px 0px #ffffffb8;
 }
 
 @media (max-width: 468px) {
   #extra-off{
-    background-position: 0px 0px;
+    background-position: -40px 0px;
   }
 }
 
@@ -1076,11 +1094,34 @@ div > .product-card-wrapper:nth-child(3n):hover::after {
 
         .shape-1 {
             top: 20%;
-            left: 15%;
+            left: 55%;
             width: 20px;
             height: 20px;
             background: var(--pink);
             border-radius: 50%;
+        }
+
+        .shape-1::before{
+            content: '';
+            position: absolute;
+            top: -130%;
+            left: 320%;
+            width: 10px;
+            height: 10px;
+            background: var(--pink);
+            border-radius: 50%; 
+        }
+
+        .shape-1::after{
+            content: '';
+            position: absolute;
+            top: 390%;
+            left: -120%;
+            width: 30px;
+            height: 10px;
+            background: var(--pink);
+            border-radius: 8px; 
+            transform: rotate(35deg);
         }
 
         .shape-2 {
@@ -1088,15 +1129,139 @@ div > .product-card-wrapper:nth-child(3n):hover::after {
             left: 25%;
             width: 15px;
             height: 15px;
-            background: var(--blue);
+            background: var(--hotpink);
             transform: rotate(45deg);
+        }
+
+        .shape-2::before{
+            content: '';
+            position: absolute;
+            top: -130%;
+            left: 320%;
+            width: 10px;
+            height: 10px;
+            background: var(--hotpink);
+            border-radius: 50%; 
+        }
+
+        .shape-2::after{
+            content: '';
+            position: absolute;
+            top: 390%;
+            left: -120%;
+            width: 30px;
+            height: 10px;
+            background: var(--hotpink);
+            border-radius: 8px; 
+            transform: rotate(35deg);
         }
 
         .shape-3 {
             top: 12%;
             left: 20%;
-            width: 25px;
-            height: 25px;
+            width: 23px;
+            height: 23px;
             background: var(--yellow);
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+        }
+
+        .shape-3::before{
+            content: '';
+            position: absolute;
+            top: -130%;
+            left: 320%;
+            width: 10px;
+            height: 10px;
+            background: var(--yellow);
+            border-radius: 50%; 
+        }
+
+        .shape-3::after{
+            content: '';
+            position: absolute;
+            top: 390%;
+            left: -120%;
+            width: 30px;
+            height: 10px;
+            background: var(--yellow);
+            border-radius: 8px; 
+            transform: rotate(35deg);
+        }
+
+        .shape-4{
+            top: 42%;
+            right: 10%;
+            width: 23px;
+            height: 23px;
+            background: var(--green);
+            /* clip-path: polygon(50% 0%, 0% 100%, 100% 100%); */
+            transform: rotate(45deg);
+        }
+
+        .shape-4::before{
+            content: '';
+            position: absolute;
+            top: -130%;
+            left: 210%;
+            width: 10px;
+            height: 10px;
+            background: var(--green);
+            border-radius: 50%; 
+        }
+
+        .shape-4::after{
+            content: '';
+            position: absolute;
+            top: 390%;
+            left: -90%;
+            width: 30px;
+            height: 10px;
+            background: var(--green);
+            border-radius: 8px; 
+            transform: rotate(35deg);
+        }
+
+        /* TEXT EFFECTS */
+        .shapes-effect::before,
+        .shapes-effect::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--yellow);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .shapes-effect::before {
+            top: -10px;
+            right: -15px;
+            transform: scale(0) rotate(0deg);
+        }
+
+        .shapes-effect::after {
+            bottom: -10px;
+            left: -15px;
+            background: var(--green);
+            border-radius: 0;
+            transform: scale(0) rotate(0deg);
+        }
+
+        .shapes-effect:hover::before {
+            opacity: 1;
+            transform: scale(1) rotate(360deg);
+        }
+
+        .shapes-effect:hover::after {
+            opacity: 1;
+            transform: scale(1) rotate(-180deg);
+        }
+
+        * {
+          user-select: none;
+        }
+
+        .card-body{
+          padding: 0 4px;
         }

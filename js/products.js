@@ -314,7 +314,7 @@ const PRODUCTS = {
     "salePrice": 59.00,
     "category": "SUNGLASSES",
     "image": "img/product/accessories/accessories6.jpg",
-    "description": "Unique round frames in soft pink with geometric pattern temples and blue accent details. Handcrafted design that\'s part art piece, part eyewear."
+    "description": "Unique round frames in soft pink with geometric pattern temples and blue accent details. Handcrafted design that is part art piece, part eyewear."
   },
   {
     "id": 35,
@@ -323,7 +323,7 @@ const PRODUCTS = {
     "salePrice": 52.00,
     "category": "SUNGLASSES",
     "image": "img/product/accessories/accessories7.jpg",
-    "description": "Round yellow frames with polka dot temples and geometric color blocking. A tribute to both Memphis design and Mondrian\'s color theory in wearable form."
+    "description": "Round yellow frames with polka dot temples and geometric color blocking. A tribute to both Memphis design and Mondrian color theory in wearable form."
   },
   {
     "id": 36,
@@ -552,7 +552,7 @@ generateProductHtml(product) {
           </div>
         </a>
         
-        <div class="mt-4">
+        <div class="mt-4 card-body">
           <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">${product.category}</h3>
           <h2 class="text-gray-900 title-font text-lg font-medium">
             <a href="#" class="product-item cursor-pointer hover:text-pink-500 transition-colors duration-200" 
@@ -572,7 +572,7 @@ generateLoadingCard() {
     <div class="lg:w-1/4 md:w-1/2 p-4 w-full">
       <div class="product-card-wrapper">
         <div class="h-48 rounded overflow-hidden product-loading"></div>
-        <div class="mt-4">
+        <div class="mt-4 card-body">
           <div class="h-3 bg-gray-200 rounded w-1/3 mb-2 product-loading"></div>
           <div class="h-4 bg-gray-200 rounded w-2/3 mb-2 product-loading"></div>
           <div class="h-4 bg-gray-200 rounded w-1/4 product-loading"></div>
