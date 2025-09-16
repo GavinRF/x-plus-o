@@ -253,7 +253,7 @@ body{
   #canvas {
     margin-top: 40px;
   }
-  
+
   #cone {
     margin: -360px 0 -160px auto;
   }
@@ -288,11 +288,27 @@ body{
   background: transparent;
 }
 
+#cube{
+  position: absolute;
+  width: 655px;
+  max-width: 100vw;
+  height: 645px;
+  right:0px;
+  top: 2175px;
+  cursor: grab;
+  background: transparent;
+  z-index: -2;
+}
+
 @media (max-width: 468px) {
   #cluster {
     width: 344px;
     height: 340px;
     margin: 0px 0px -220px 0;
+  }
+
+  #cube{
+    top: 5175px;
   }
 }
 
@@ -307,17 +323,6 @@ body{
   z-index: -1;
 }
 
-#cube{
-  position: absolute;
-  width: 655px;
-  max-width: 100vw;
-  height: 645px;
-  right:0px;
-  top: 2175px;
-  cursor: grab;
-  background: transparent;
-  z-index: -2;
-}
 
 @keyframes beat {
   0%, 100% { transform: scale(1); }
